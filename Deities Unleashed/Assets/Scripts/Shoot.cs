@@ -1,46 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
-    public CrossBowController crossBowController;
-
     public Transform arrowSpawnPoint;
     public GameObject arrowPrefab;    
     public Button attackButton;
-    public AudioSource ShootSound;
-    public bool isOnCooldown = false;
-    public float cooldownDuration = 2.0f;
+    private AudioSource ShootSound;
+    private bool isOnCooldown = false;
+    private float cooldownDuration = 3.0f;
+    [SerializeField] float arrowSpeed = 10;
 
-    [SerializeField] float arrowSpeed = 30;
-
-    private bool canShoot = true;
-
-    void Start()
+    private void Start()
     {
+        // Find the AttackButton by its name and attach the ShootArrow method to its click event
         ShootSound = GetComponent<AudioSource>();
         attackButton = GameObject.Find("AttackBtn").GetComponent<Button>();
         attackButton.onClick.AddListener(OnAttackButtonClick);
-
-
-        crossBowController = FindObjectOfType<CrossBowController>(true);
-
-        if (crossBowController == null)
-        {
-            Debug.LogError("CrossBowController not found! Make sure it is attached to the GameObject.");
-            return;
-        }
-
-        UpdateButtonIcon();
+        
     }
 
-
-    public void OnAttackButtonClick()
+    private void OnAttackButtonClick()
     {
-        if (canShoot && !isOnCooldown)
+        if (!isOnCooldown)
         {
             ShootArrow();
             StartCoroutine(StartCooldown());
@@ -48,28 +32,17 @@ public class Shoot : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void ShootArrow()
+    void ShootArrow()
     {
         ShootSound.Play();
         var arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
         arrow.GetComponent<Rigidbody>().velocity = arrowSpawnPoint.forward * arrowSpeed;
     }
 
-    public IEnumerator StartCooldown()
+    private IEnumerator StartCooldown()
     {
         isOnCooldown = true;
         yield return new WaitForSeconds(cooldownDuration);
         isOnCooldown = false;
-    }
-
-    public void SetCanShoot(bool value)
-    {
-        canShoot = value;
-    }
-
-    public void UpdateButtonIcon()
-    {
-        crossBowController.SetCrossBowState(canShoot, isOnCooldown);
-
     }
 }

@@ -8,7 +8,8 @@ public class Arrow : MonoBehaviour
     [SerializeField] float life = 10;
     [SerializeField] int minDamage; // Minimum damage
     [SerializeField] int maxDamage; // Maximum damage
-
+    [SerializeField] float range = 100f;
+    [SerializeField] float impactForce = 40f;
 
     // Define the tags that the arrow should compare against
     private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" };
@@ -35,7 +36,7 @@ public class Arrow : MonoBehaviour
     {
         minDamage = 2 + (3 * CS.currentLevel);
         maxDamage = 10 + (5 * CS.currentLevel);
-        Debug.Log("" + minDamage + " & " + maxDamage);
+        Debug.Log("" +minDamage +" & " +maxDamage);
         // Check if damage has already been applied
         if (damageApplied)
             return;
@@ -46,8 +47,8 @@ public class Arrow : MonoBehaviour
         // Generate a random number between 1 and 10 for critical hit
         int criticalRoll = Random.Range(1, 11);
         Debug.Log("Critical: " + criticalRoll);
-        // Check for a critical hit (e.g., if the roll is 2, add 1000 damage)
-        if (criticalRoll == 2)
+        // Check for a critical hit (e.g., if the roll is 5, add 1000 damage)
+        if (criticalRoll == 5)
         {
             damage += 1000;
             Debug.Log("Critical Hit! Added 1000 damage.");
