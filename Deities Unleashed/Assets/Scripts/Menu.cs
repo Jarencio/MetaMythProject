@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Menu : MonoBehaviour
 {
+    public AudioSource buttonSound;
 
     int Saved_scene;
     int Scene_index;
 
+    void Start()
+    {
+        buttonSound = GetComponent<AudioSource>();
+    }
+
     public void new_game()
     {
+        buttonSound.Play();
         SceneManager.LoadSceneAsync(1);
         Debug.Log("NEW GAME");
     }
@@ -36,6 +44,7 @@ public class Menu : MonoBehaviour
 
     public void Next_Scene()
     {
+        buttonSound.Play();
         Scene_index = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadSceneAsync(Scene_index);
     }
@@ -43,11 +52,14 @@ public class Menu : MonoBehaviour
     //Switch Scene
     public void SwitchScene(string sceneName)
     {
+        buttonSound.Play();
         SceneManager.LoadScene(sceneName);
+        
     }
 
     public void QuitBtn()
     {
+        buttonSound.Play();
         Debug.Log("Gumagana Quit");
         Application.Quit();
     } 

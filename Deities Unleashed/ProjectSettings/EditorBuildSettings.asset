@@ -17,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditScene.unity
     guid: 3f84798f279890b4d8e677c579ba162d
-  - enabled: 1
-    path: Assets/Scenes/EmailScene.unity
-    guid: f02b7d64f2fc95e4c8c7027b2292f574
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

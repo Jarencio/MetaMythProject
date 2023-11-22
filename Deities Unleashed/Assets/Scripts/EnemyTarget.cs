@@ -1,10 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Corrected import
+using UnityEngine.UIElements;
 
 public class EnemyTarget : MonoBehaviour
 {
+    public ItemCollection Item;
+    public GameObject healthprefabs;
+
+    public Popup pop;
+    private Animator anim;
+    public AudioSource deathSound;
+    public GameObject Pref;
     public CharacterLevelSystem CS;
+
+    public BoxCollider boxCollider1;
+
+
+
+    public BoxCollider boxCollider;
+
     public int Level;
     public float Health;
+    public float MaxHealth;
     public float MinDmg;
     public float MaxDmg;
     public float Defense;
@@ -13,11 +32,14 @@ public class EnemyTarget : MonoBehaviour
 
     private int minLevel = 1;
     private int maxLevel = 25;
-
+    [SerializeField] FloatingHealth healthbar;
 
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+        deathSound = GetComponent<AudioSource>();
+
         Debug.Log("Health: " + Health);
         // Ensure CS is not null
         if (CS != null)
@@ -33,6 +55,8 @@ public class EnemyTarget : MonoBehaviour
 
             // Assign the generated level to currentLevel
             Level = MonsterLvl;
+            healthbar = GetComponentInChildren<FloatingHealth>();
+
             Stats();
         }
     }
@@ -136,14 +160,19 @@ public class EnemyTarget : MonoBehaviour
         }
 
         expgain = 2 + (2 * Level);
-
+        MaxHealth = Health;
+        if (healthbar != null)
+        {
+            pop.Lvl(Level);
+            healthbar.UpdateHealthBar(Health, MaxHealth);
+        }
     }
 
     public void TakeDamage(float amount)
     {
         // Deduct health based on the amount of damage taken
         float a = amount - Defense;
-      if (a < 0)
+        if (a < 0)
         {
             a = 0;
         }
@@ -152,19 +181,68 @@ public class EnemyTarget : MonoBehaviour
         Debug.Log("Remaining Health: " + Health);
         if (Health <= 0)
         {
-            Die();
+            deathSound.Play();
+            anim.SetTrigger("death");
+            Invoke("Die", 1.0f);//delay
         }
+
+        //Floating Damage
+        DisplayFloatingDamage(a);
+        healthbar.UpdateHealthBar(Health, MaxHealth);
+
     }
+
+
+    void DisplayFloatingDamage(float damageAmount)
+    {
+        // Calculate a random position around the enemy within a specified range
+        float xRange = Random.Range(-1.0f, 1.0f); // Adjust the range as needed
+        float zRange = Random.Range(-1.0f, 1.0f); // Adjust the range as needed
+
+        Vector3 randomOffset = new Vector3(xRange, 0.5f, zRange); // Adjust the '0.5f' value for vertical offset.
+
+        Vector3 textPosition = transform.position + randomOffset + transform.forward * 2f; // Adjust the '2f' value for forward offset.
+
+        // Instantiate the damage text in the calculated random position
+        GameObject damageText = Instantiate(Pref, textPosition, Quaternion.identity);
+
+        // Access the Popup component of the instantiated object and set the damage value
+        Popup popup = damageText.GetComponent<Popup>();
+        if (popup != null)
+        {
+            popup.Setup((int)damageAmount);
+        }
+
+        // Destroy the damage text after 2 seconds
+        Destroy(damageText, 2.0f); // Adjust the time (2.0f) as needed.
+    }
+
+
+
+
 
     void Die()
     {
+
+        // Deactivate the BoxCollider
+        if (boxCollider1 != null) boxCollider1.enabled = false;
+
+        Destroy(healthprefabs);
         // Destroy the game object when health reaches zero
+        Destroy(healthprefabs);
         CS.GainExperience(expgain);
+
+
+
         Destroy(gameObject);
+
+        // Deactivate the BoxCollider
+        if (boxCollider != null) boxCollider.enabled = false;
+
         Debug.Log("Dead");
+
+        Item.RespawnItem();
     }
+
+
 }
-
-
-
-
