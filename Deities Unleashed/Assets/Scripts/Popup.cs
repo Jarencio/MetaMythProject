@@ -12,6 +12,7 @@ public class Popup : MonoBehaviour
     private void Awake()
     {
         TextMesh = transform.GetComponent<TextMeshPro>();
+        Texts = transform.GetComponent<TextMeshProUGUI>();
     }
 
     public void Setup(int Damage)
@@ -34,6 +35,12 @@ public class Popup : MonoBehaviour
         // Flip the TextMesh sideways by changing the local scale
         transform.localScale = new Vector3(-1f, 1f, 1f);
     }
+
+    public void PlayerLvl(int Level)
+    {
+        Texts.SetText("LVL. " + Level.ToString());
+    }
+
 
     public void Cooldown()
     {

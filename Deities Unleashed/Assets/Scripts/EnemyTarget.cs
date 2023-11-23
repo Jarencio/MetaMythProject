@@ -14,7 +14,7 @@ public class EnemyTarget : MonoBehaviour
     public AudioSource deathSound;
     public GameObject Pref;
     public CharacterLevelSystem CS;
-
+    public GameObject burningParticlesPrefab;
     public BoxCollider boxCollider1;
 
 
@@ -217,7 +217,46 @@ public class EnemyTarget : MonoBehaviour
         Destroy(damageText, 2.0f); // Adjust the time (2.0f) as needed.
     }
 
+    public void Burn()
+    {
+        string objectTag = gameObject.tag;
 
+        if (objectTag == "Phoenix")
+        {
+
+        }
+        else
+        {
+            StartCoroutine(DecreaseHealthOverTime());
+            Debug.Log("Burning Starts!");
+            Instantiate(burningParticlesPrefab, transform.position, Quaternion.identity);
+        }
+        }
+
+        IEnumerator DecreaseHealthOverTime()
+    {
+
+        Debug.Log("NOW!");
+        
+        float totalTime = 20f; // Total duration in seconds
+        float interval = 3f;   // Interval for health decrease in seconds
+
+        while (totalTime > 0f)
+        {
+            yield return new WaitForSeconds(interval);
+
+            // Decrease health by a random value between 0 and 5
+            int damage = Random.Range(0, 3);
+            Health -= damage;
+            DisplayFloatingDamage(damage);
+            healthbar.UpdateHealthBar(Health, MaxHealth);
+            totalTime -= interval;
+        }
+
+        // Health decrease is complete
+        Debug.Log("Health decrease complete!");
+
+    }
 
 
 
@@ -243,6 +282,4 @@ public class EnemyTarget : MonoBehaviour
 
         Item.RespawnItem();
     }
-
-
 }

@@ -14,6 +14,8 @@ public class CharacterLevelSystem : MonoBehaviour
     public float defense = 4;
     public FloatingHealth LvlBar;
     public FloatingHealth HealthBar;
+    public Popup pops;
+
 
     // Function to gain experience points
     public void GainExperience(int expAmount)
@@ -79,6 +81,7 @@ public class CharacterLevelSystem : MonoBehaviour
         health += 20; // Increase health by 10 for each level
         defense += 2; // Increase defense by 2 for each level
         currenthealth += 20;
+        pops.PlayerLvl(currentLevel);
     }
 
     void Update()

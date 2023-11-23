@@ -12,7 +12,7 @@ public class SwordController : MonoBehaviour
     public float attackCooldown = 1.0f;
     public bool isAttacking = false;
     public Button swordAttackButton;
-
+    int s;
     // Reference to the player's level system
     public CharacterLevelSystem CS;
 
@@ -61,18 +61,21 @@ public class SwordController : MonoBehaviour
     public int CalculateSwordDamage()
     {
         int minDamage = 2 + (3 * CS.currentLevel);
-        int maxDamage = 10 + (5 * CS.currentLevel);
+        int maxDamage = 5 + (5 * CS.currentLevel);
 
         int damage = Random.Range(minDamage, maxDamage + 1);
         Debug.Log("Calculated Damage: " + damage);
 
-        int criticalRoll = Random.Range(1, 11);
+        int criticalRoll = Random.Range(3, 3);
         Debug.Log("Critical Roll: " + criticalRoll);
 
-        if (criticalRoll == 5)
+        if (criticalRoll == 3)
         {
-            damage += 1000;
-            Debug.Log("Critical Hit! Added 1000 damage.");
+            s = 1;
+        }
+        else
+        {
+            s = 0;
         }
 
         return damage;
@@ -102,7 +105,11 @@ public class SwordController : MonoBehaviour
                 if (enemyDamageReceiver != null)
                 {
                     enemyDamageReceiver.TakeDamage(damage);
-                    Debug.Log("Applied Damage: " + damage);
+                    if (s == 1)
+                    {
+                        enemyDamageReceiver.Burn();
+                    }
+                        Debug.Log("Applied Damage: " + damage);
                     // Additional logic can be added here if needed
                 }
             }
