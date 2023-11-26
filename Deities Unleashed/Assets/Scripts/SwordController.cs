@@ -61,12 +61,12 @@ public class SwordController : MonoBehaviour
     public int CalculateSwordDamage()
     {
         int minDamage = 2 + (3 * CS.currentLevel);
-        int maxDamage = 5 + (5 * CS.currentLevel);
+        int maxDamage = 10 + (5 * CS.currentLevel);
 
         int damage = Random.Range(minDamage, maxDamage + 1);
         Debug.Log("Calculated Damage: " + damage);
 
-        int criticalRoll = Random.Range(3, 3);
+        int criticalRoll = Random.Range(2, 6);
         Debug.Log("Critical Roll: " + criticalRoll);
 
         if (criticalRoll == 3)
@@ -84,7 +84,7 @@ public class SwordController : MonoBehaviour
     void DealDamage(int damage)
     {
         // Check for collision with enemies
-        Collider[] hitColliders = Physics.OverlapSphere(sword.transform.position, sword.GetComponent<BoxCollider>().size.x);
+        Collider[] hitColliders = Physics.OverlapSphere(sword.transform.position, sword.GetComponent<BoxCollider>().size.x*3);
 
         foreach (Collider collision in hitColliders)
         {

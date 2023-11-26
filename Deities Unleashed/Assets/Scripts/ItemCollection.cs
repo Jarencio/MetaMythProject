@@ -8,7 +8,8 @@ public class ItemCollection : MonoBehaviour
 
     public GameObject ItemPrefab;
     public GameObject spawnedItem;
-    public GameObject enemyToDestroy;  
+    public GameObject enemyToDestroy;
+    public Transform spawnItemOn;
 
     public Inventory inventory;
 
@@ -37,7 +38,7 @@ public class ItemCollection : MonoBehaviour
 
     
 
-    public void RespawnItem()
+    /*public void RespawnItem()
     {
         // Deactivate the current item
         if (spawnedItem != null)
@@ -52,5 +53,13 @@ public class ItemCollection : MonoBehaviour
         spawnedItem = Instantiate(ItemPrefab, respawnPosition, Quaternion.identity);
         spawnedItem.SetActive(true);
 
+    }*/
+    public void RespawnItem()
+    {
+        if (spawnedItem != null && spawnItemOn != null)
+        {
+            Instantiate(spawnedItem, spawnItemOn.position, Quaternion.identity);
+            spawnedItem.SetActive(true);
+        }
     }
 }

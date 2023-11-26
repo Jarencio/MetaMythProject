@@ -10,7 +10,7 @@ public class CharacterLevelSystem : MonoBehaviour
     public int expToNextLevel = 20;
     // Player stats
     public float health = 150;
-    public float currenthealth = 100;
+    public float currenthealth = 150;
     public float defense = 4;
     public FloatingHealth LvlBar;
     public FloatingHealth HealthBar;
@@ -97,7 +97,7 @@ public class CharacterLevelSystem : MonoBehaviour
 
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         currenthealth -= amount - defense;
         HealthBar.UpdateHealthBar(currenthealth, health);
