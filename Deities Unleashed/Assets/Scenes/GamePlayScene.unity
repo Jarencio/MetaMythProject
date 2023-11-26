@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42118642, g: 0.45202357, b: 0.47638714, a: 1}
+  m_IndirectSpecularColor: {r: 0.4237372, g: 0.45497972, b: 0.47844338, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -535,6 +535,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 1361596183}
   item1anim: {fileID: 1686303838}
+--- !u!1 &155705095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155705096}
+  m_Layer: 0
+  m_Name: ProjectilePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &155705096
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155705095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699187787}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.02, y: 0.63}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &178298345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,6 +3414,7 @@ GameObject:
   - component: {fileID: 699187785}
   - component: {fileID: 699187788}
   - component: {fileID: 699187789}
+  - component: {fileID: 699187790}
   m_Layer: 0
   m_Name: EnemyBalbal
   m_TagString: BalBal
@@ -3616,6 +3653,7 @@ RectTransform:
   m_Children:
   - {fileID: 1515242164}
   - {fileID: 2068191107}
+  - {fileID: 155705096}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -3645,6 +3683,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.7774396, y: 6.697653, z: 0.2}
   m_Center: {x: 0.11353898, y: -0.101955414, z: 0.00000001521087}
+--- !u!114 &699187790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699187778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45232d63cc9c143468ee91e0890f7a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab: {fileID: 7652643149443253455, guid: 68a4677e9e21e4844a472aba40565d27,
+    type: 3}
+  ProjectilePos: {fileID: 155705096}
+  enemyTarget: {fileID: 699187779}
+  shootingDistanceThreshold: 15
 --- !u!1 &758399233
 GameObject:
   m_ObjectHideFlags: 0
@@ -4736,12 +4791,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884878974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0300293, y: -4.2, z: 6.0764923}
+  m_LocalPosition: {x: -0.040039062, y: -4.2, z: 6.0764923}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1763614748}
-  m_RootOrder: 1
+  m_Father: {fileID: 935585278}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922506799
 GameObject:
@@ -5228,6 +5283,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1763614748}
+  - {fileID: 2113862397}
+  - {fileID: 884878978}
   - {fileID: 1479871721}
   m_Father: {fileID: 227098315}
   m_RootOrder: 0
@@ -8233,7 +8290,7 @@ Transform:
   - {fileID: 1050030476}
   - {fileID: 1969290729}
   m_Father: {fileID: 935585278}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1479871722
 MonoBehaviour:
@@ -9529,12 +9586,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763614747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2113862397}
-  - {fileID: 884878978}
+  m_Children: []
   m_Father: {fileID: 935585278}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9618,7 +9673,7 @@ MonoBehaviour:
   currentExp: 0
   expToNextLevel: 20
   health: 150
-  currenthealth: 100
+  currenthealth: 150
   defense: 5
   LvlBar: {fileID: 1103305535}
   HealthBar: {fileID: 1649861308}
@@ -9637,7 +9692,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!330 &1763614754
 ParticleSystemForceField:
@@ -11555,13 +11610,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113862396}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.98999023, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1763614748}
-  m_RootOrder: 0
+  m_Father: {fileID: 935585278}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!330 &2113862398
 ParticleSystemForceField:

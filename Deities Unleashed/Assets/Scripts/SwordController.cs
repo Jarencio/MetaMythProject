@@ -61,12 +61,12 @@ public class SwordController : MonoBehaviour
     public int CalculateSwordDamage()
     {
         int minDamage = 2 + (3 * CS.currentLevel);
-        int maxDamage = 5 + (5 * CS.currentLevel);
+        int maxDamage = 10 + (5 * CS.currentLevel);
 
         int damage = Random.Range(minDamage, maxDamage + 1);
         Debug.Log("Calculated Damage: " + damage);
 
-        int criticalRoll = Random.Range(3, 3);
+        int criticalRoll = Random.Range(2, 6);
         Debug.Log("Critical Roll: " + criticalRoll);
 
         if (criticalRoll == 3)
