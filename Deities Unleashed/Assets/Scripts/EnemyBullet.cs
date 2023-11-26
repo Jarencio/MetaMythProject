@@ -1,14 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    public Player p;
     public GameObject player;
     public Rigidbody rb;
     public float force;
     public int damage; // Add a damage variable
     public float timeToLive = 5f;
+
+    public Action OnProjectileHitPlayer { get; internal set; }
 
 
     // Start is called before the first frame update
@@ -49,7 +53,9 @@ void OnCollisionEnter(Collision collision)
         }
 
         Destroy(gameObject);
-    }
+
+            p.BloodScreen();
+        }
     else
     {
         Debug.Log("No damage applied. Collision tag: " + collision.gameObject.tag);
