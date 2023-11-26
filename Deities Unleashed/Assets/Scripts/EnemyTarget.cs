@@ -9,7 +9,7 @@ public class EnemyTarget : MonoBehaviour
     public ItemCollection Item;
     public ExpParticleCollision expCollide;
     public GameObject healthprefabs;
-
+    public GameObject bloodParticles;
     public Popup pop;
     private Animator anim;
     public AudioSource deathSound;
@@ -187,11 +187,26 @@ public class EnemyTarget : MonoBehaviour
             Invoke("Die", 1.0f);//delay
         }
 
+        // Instantiate blood particles at the enemy's position
+        InstantiateBloodParticles();
+
         //Floating Damage
         DisplayFloatingDamage(a);
         healthbar.UpdateHealthBar(Health, MaxHealth);
 
     }
+
+    void InstantiateBloodParticles()
+    {
+        // Instantiate blood particles at the enemy's position
+        if (bloodParticles != null)
+        {
+            Instantiate(bloodParticles, transform.position, Quaternion.identity);
+
+            Destroy(bloodParticles, 2.0f) ;
+        }
+    }
+
 
 
     void DisplayFloatingDamage(float damageAmount)
