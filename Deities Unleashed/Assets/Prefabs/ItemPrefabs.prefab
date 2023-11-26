@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4276385878395762860
 RectTransform:
   m_ObjectHideFlags: 0
@@ -143,9 +143,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  MoveSpeed: 10
+  MoveSpeed: 20
   MaxDist: 10
   MinDist: 0
+  ChaseRange: 10
 --- !u!65 &8960755855375077889
 BoxCollider:
   m_ObjectHideFlags: 0

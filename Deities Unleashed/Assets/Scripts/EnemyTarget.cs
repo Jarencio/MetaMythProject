@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class EnemyTarget : MonoBehaviour
 {
     public ItemCollection Item;
+    public ExpParticleCollision expCollide;
     public GameObject healthprefabs;
 
     public Popup pop;
@@ -262,7 +263,7 @@ public class EnemyTarget : MonoBehaviour
 
     void Die()
     {
-
+        
         // Deactivate the BoxCollider
         if (boxCollider1 != null) boxCollider1.enabled = false;
 
@@ -279,7 +280,9 @@ public class EnemyTarget : MonoBehaviour
         if (boxCollider != null) boxCollider.enabled = false;
 
         Debug.Log("Dead");
-
+       
         Item.RespawnItem();
+        expCollide.SpawnExpParticles();
+
     }
 }

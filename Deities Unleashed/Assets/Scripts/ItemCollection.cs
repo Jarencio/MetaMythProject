@@ -8,11 +8,11 @@ public class ItemCollection : MonoBehaviour
 
     public GameObject ItemPrefab;
     public GameObject spawnedItem;
-    public GameObject enemyToDestroy;
+    public GameObject enemyToDestroy;  
 
     public Inventory inventory;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -28,9 +28,14 @@ public class ItemCollection : MonoBehaviour
             // Destroy the item GameObject
             Destroy(gameObject);
 
+            // Spawn experience particles
+         
+
         }
         inventory.EnableAnimator1();
     }
+
+    
 
     public void RespawnItem()
     {
@@ -46,5 +51,6 @@ public class ItemCollection : MonoBehaviour
         // Spawn a new item at the calculated position
         spawnedItem = Instantiate(ItemPrefab, respawnPosition, Quaternion.identity);
         spawnedItem.SetActive(true);
+
     }
 }
