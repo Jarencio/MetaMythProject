@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public Player p;
     public GameObject player;
     public Rigidbody rb;
     public float force;
@@ -54,7 +53,6 @@ void OnCollisionEnter(Collision collision)
 
         Destroy(gameObject);
 
-            p.BloodScreen();
         }
     else
     {

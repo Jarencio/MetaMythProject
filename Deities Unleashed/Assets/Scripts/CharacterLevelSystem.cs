@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public class CharacterLevelSystem : MonoBehaviour
 {
+    public Player P;
     public int currentLevel = 1;
     public int currentExp = 0;
     public int expToNextLevel = 20;
@@ -101,6 +102,8 @@ public class CharacterLevelSystem : MonoBehaviour
     {
         currenthealth -= amount - defense;
         HealthBar.UpdateHealthBar(currenthealth, health);
+
+        P.BloodScreen();
     }
 
     void Start()
