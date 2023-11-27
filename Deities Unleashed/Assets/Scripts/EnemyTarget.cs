@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class EnemyTarget : MonoBehaviour
 {
+    public float spawnOffsetDistance = 1.0f;
     public ItemCollection Item;
     public ExpParticleCollision expCollide;
     public GameObject healthprefabs;
@@ -239,15 +240,19 @@ public class EnemyTarget : MonoBehaviour
 
         if (objectTag == "Phoenix")
         {
-
+            
         }
         else
         {
             StartCoroutine(DecreaseHealthOverTime());
             Debug.Log("Burning Starts!");
-            Instantiate(burningParticlesPrefab, transform.position, Quaternion.identity);
+
+            Vector3 spawnPosition = transform.position + transform.forward * spawnOffsetDistance;
+
+            // Instantiate particles with the adjusted position
+            Instantiate(burningParticlesPrefab, spawnPosition, Quaternion.identity);
         }
-        }
+     }
 
         IEnumerator DecreaseHealthOverTime()
     {

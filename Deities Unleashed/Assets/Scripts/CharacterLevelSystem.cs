@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public class CharacterLevelSystem : MonoBehaviour
 {
+    public GameObject deadScreen;
     public Player P;
     public int currentLevel = 1;
     public int currentExp = 0;
@@ -102,6 +103,13 @@ public class CharacterLevelSystem : MonoBehaviour
     {
         currenthealth -= amount - defense;
         HealthBar.UpdateHealthBar(currenthealth, health);
+
+
+        if(currenthealth <= 0)
+        {
+            deadScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
 
         P.BloodScreen();
     }
