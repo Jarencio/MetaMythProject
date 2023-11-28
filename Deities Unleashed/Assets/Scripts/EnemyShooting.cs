@@ -8,8 +8,8 @@ public class EnemyShooting : MonoBehaviour
     public Transform ProjectilePos;
     public EnemyTarget enemyTarget; // Reference to EnemyTarget
     public float shootingDistanceThreshold = 10f;
-
     private float timer;
+    public int type;
 
     void Start()
     {
@@ -72,6 +72,8 @@ void Update()
 
 
             enemyBulletScript.damage = damage;
+            enemyBulletScript.type = type;
+
         }
         else
         {

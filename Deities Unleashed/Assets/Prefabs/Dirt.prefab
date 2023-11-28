@@ -127,9 +127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f9afb42f136c148bb0c6298955725c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p: {fileID: 0}
   player: {fileID: 0}
   rb: {fileID: 4095338787042782993}
   force: 40
   damage: 20
   timeToLive: 5
+  s: 0
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 64

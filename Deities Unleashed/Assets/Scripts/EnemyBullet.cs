@@ -10,16 +10,19 @@ public class EnemyBullet : MonoBehaviour
     public float force;
     public int damage; // Add a damage variable
     public float timeToLive = 5f;
+    public float timeToLives = 1f;
 
+    public int type;
     public Action OnProjectileHitPlayer { get; internal set; }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
-
+       
         if (player != null)
         {
             Vector3 direction = player.transform.position - transform.position;
@@ -29,8 +32,13 @@ public class EnemyBullet : MonoBehaviour
 
             // Use Rigidbody velocity to move the bullet
             rb.velocity = direction * force;
-
+        
+        if(type==0){
            Destroy(gameObject, timeToLive);
+        } else{
+           Destroy(gameObject, timeToLives);          
+        }
+
 
         }
         else
