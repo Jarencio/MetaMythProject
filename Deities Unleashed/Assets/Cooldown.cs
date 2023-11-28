@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Cooldown : MonoBehaviour
 {
     public Image[] weapons; // Array to store all weapon images
-    public float cooldown = 20.0f;
+    public float cooldown = 5.0f;
     private bool isCooldown = false;
 
     // Add a reference to your UI buttons in the Unity Editor

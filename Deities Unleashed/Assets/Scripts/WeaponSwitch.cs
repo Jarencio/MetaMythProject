@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WeaponSwitch : MonoBehaviour
 {
     public Shoot shoot;
-
+    public SwordController Candle;
     [SerializeField] GameObject slot1;
     [SerializeField] GameObject slot2;
 
@@ -31,6 +31,7 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 0;
         Equip1();
+        shoot.isOnCooldown = false;
     }
 
 
@@ -41,6 +42,7 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 1;
         Equip2();
+        Candle.canAttack = true;
     }
 
     void Equip1()

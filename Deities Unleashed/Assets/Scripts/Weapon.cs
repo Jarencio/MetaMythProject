@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
     public AudioSource equipSound;
 
     private bool canSwitchWeapon = true;
-    public float switchCooldownDuration = 20.0f;
+    public float switchCooldownDuration = 5.0f;
 
     // Start is called before the first frame update
     void Start()

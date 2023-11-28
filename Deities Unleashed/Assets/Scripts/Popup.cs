@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class Popup : MonoBehaviour
 {
     private TextMeshPro TextMesh;
     private TextMeshProUGUI Texts; // Change the type to TextMeshProUGUI
-
+    public Text textComponent;
     private void Awake()
     {
         TextMesh = transform.GetComponent<TextMeshPro>();
@@ -65,4 +66,32 @@ public class Popup : MonoBehaviour
             Debug.LogError("TextMesh component not assigned in the inspector!");
         }
     }
+
+public void NoImageTrack()
+{
+    if (textComponent != null)
+    {
+        textComponent.text = "No enemies detected. Time to scan";
+        textComponent.color = new Color(1.0f, 0.5f, 0.5f); // Light Red
+    }
+    else
+    {
+        Debug.LogError("Text component not assigned in the inspector!");
+    }
+}
+
+
+public void ImageTrack()
+{
+    if (textComponent != null)
+    {
+        textComponent.text = "Image is scanned! Time to fight";
+        textComponent.color = new Color(0.0f, 1.0f, 0.0f, 1.0f); // Light Green
+    }
+    else
+    {
+        Debug.LogError("Text component not assigned in the inspector!");
+    }
+}
+
 }
