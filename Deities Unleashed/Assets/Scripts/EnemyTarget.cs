@@ -161,26 +161,58 @@ public class EnemyTarget : MonoBehaviour
             Defense = 4f + (2f * Level);
         }
 
+                else if(objectTag == "Mayari")
+    {
+                        Level = 8;
+            Health = 500f;
+            MinDmg = 40f;
+            MaxDmg = 60f;
+            Defense = 0f;
+            expgain = 2000;
+    }
+    else if(objectTag == "Mapulon"){
+
+    }
+    else if(objectTag == "Bathala"){
+
+    }
         expgain = 2 + (2 * Level);
         MaxHealth = Health;
         if (healthbar != null)
         {
             pop.Lvl(Level);
             healthbar.UpdateHealthBar(Health, MaxHealth);
+            
         }
+
+
+
     }
 
     public void TakeDamage(float amount)
     {
+        string objectTag = gameObject.tag;
+
         // Deduct health based on the amount of damage taken
         float a = amount - Defense;
+        
+        if (objectTag == "Mayari"){
+        if (a > 1000)
+        {
+            a -= 1000;
+        }
+        }
+    
         if (a < 0)
         {
             a = 0;
         }
+
+
         Health -= a;
         Debug.Log("Damage Taken: " + a);
         Debug.Log("Remaining Health: " + Health);
+
         if (Health <= 0)
         {
             deathSound.Play();

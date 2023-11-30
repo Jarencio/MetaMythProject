@@ -11,8 +11,8 @@ public class CharacterLevelSystem : MonoBehaviour
     public int currentExp = 0;
     public int expToNextLevel = 20;
     // Player stats
-    public float health = 150;
-    public float currenthealth = 150;
+    public float health = 200;
+    public float currenthealth = 200;
     public float defense = 4;
     public FloatingHealth LvlBar;
     public FloatingHealth HealthBar;

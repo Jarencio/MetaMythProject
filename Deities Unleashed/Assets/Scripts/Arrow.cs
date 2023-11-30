@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
 
 
     // Define the tags that the arrow should compare against
-    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" };
+    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" ,"Mayari"};
 
     private bool damageApplied = false; // Flag to track if damage has already been applied
 
