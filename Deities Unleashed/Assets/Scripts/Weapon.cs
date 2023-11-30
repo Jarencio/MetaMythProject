@@ -15,9 +15,9 @@ public class Weapon : MonoBehaviour
 
     public Button CrossBowButton;
     public Button SwordButton;
-    public Button Sword2Button;
-    public Button SpearButton;
-    public Button BowButton;
+    public Button CrescentButton;
+    public Button RodButton;
+    public Button SunButton;
     public AudioSource equipSound;
 
     private bool canSwitchWeapon = true;
@@ -30,9 +30,9 @@ public class Weapon : MonoBehaviour
 
         CrossBowButton.onClick.AddListener(() => SwitchWeapon(0, CrossBowButton));
         SwordButton.onClick.AddListener(() => SwitchWeapon(1, SwordButton));
-        Sword2Button.onClick.AddListener(() => SwitchWeapon(2, Sword2Button));
-        SpearButton.onClick.AddListener(() => SwitchWeapon(3, SpearButton));
-        BowButton.onClick.AddListener(() => SwitchWeapon(4, BowButton));
+        CrescentButton.onClick.AddListener(() => SwitchWeapon(2, CrescentButton));
+        RodButton.onClick.AddListener(() => SwitchWeapon(3, RodButton));
+        SunButton.onClick.AddListener(() => SwitchWeapon(4, SunButton));
 
         attackButtonController = FindObjectOfType<AttackButtonController>();
 
@@ -72,9 +72,9 @@ public class Weapon : MonoBehaviour
             // Disable all buttons immediately
             CrossBowButton.interactable = false;
             SwordButton.interactable = false;
-            Sword2Button.interactable = false;
-            SpearButton.interactable = false;
-            BowButton.interactable = false;
+            CrescentButton.interactable = false;
+            RodButton.interactable = false;
+            SunButton.interactable = false;
 
             StartCoroutine(StartSwitchCooldown());
         }
@@ -97,9 +97,9 @@ public class Weapon : MonoBehaviour
         // Enable all buttons after cooldown
         CrossBowButton.interactable = true;
         SwordButton.interactable = true;
-        Sword2Button.interactable = true;
-        SpearButton.interactable = true;
-        BowButton.interactable = true;
+        CrescentButton.interactable = true;
+        RodButton.interactable = true;
+        SunButton.interactable = true;
 
         canSwitchWeapon = true;
     }

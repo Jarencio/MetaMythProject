@@ -9,9 +9,15 @@ public class WeaponSwitch : MonoBehaviour
     public SwordController Candle;
     [SerializeField] GameObject slot1;
     [SerializeField] GameObject slot2;
+    [SerializeField] GameObject slot3;
+    [SerializeField] GameObject slot4;
+    [SerializeField] GameObject slot5;
 
     public Button CrossBowButton;
     public Button SwordButton;
+    public Button CrescentButton;
+    public Button RodButton;
+    public Button SunButton;
     public int currentWeapon = 0;
 
     void Awake()
@@ -19,6 +25,9 @@ public class WeaponSwitch : MonoBehaviour
         // Attach the OnSwitchButtonClick method to the button click events
         CrossBowButton.onClick.AddListener(SwitchToCrossbow);
         SwordButton.onClick.AddListener(SwitchToSword);
+        CrescentButton.onClick.AddListener(SwitchToCrescent);
+        RodButton.onClick.AddListener(SwitchToRod);
+        SunButton.onClick.AddListener(SwitchToSun);
 
         // Initially equip the first weapon
         SwitchToCrossbow(); // Assuming you want the CrossBow as the initial weapon
@@ -45,6 +54,36 @@ public class WeaponSwitch : MonoBehaviour
         Candle.canAttack = true;
     }
 
+    void SwitchToCrescent()
+    {
+        if (currentWeapon == 2)
+            return; // If it's already the current weapon, do nothing
+
+        currentWeapon = 2;
+        Equip3();
+       
+    }
+
+    void SwitchToRod()
+    {
+        if (currentWeapon == 3)
+            return; // If it's already the current weapon, do nothing
+
+        currentWeapon = 3;
+        Equip4();
+
+    }
+
+    void SwitchToSun()
+    {
+        if (currentWeapon == 4)
+            return; // If it's already the current weapon, do nothing
+
+        currentWeapon = 4;
+        Equip5();
+
+    }
+
     void Equip1()
     {
         slot1.SetActive(true);
@@ -57,5 +96,35 @@ public class WeaponSwitch : MonoBehaviour
         slot1.SetActive(false);
         slot2.SetActive(true);
         shoot.SetCanShoot(false); // Prevent shooting with this weapon
+    }
+    
+    void Equip3()
+    {
+        slot1.SetActive(false);
+        slot2.SetActive(false);
+        slot3.SetActive(true);
+        slot4.SetActive(false);
+        slot5.SetActive(false);
+        shoot.SetCanShoot(false);
+    }
+
+    void Equip4()
+    {
+        slot1.SetActive(false);
+        slot2.SetActive(false);
+        slot3.SetActive(false);
+        slot4.SetActive(true);
+        slot5.SetActive(false);
+        shoot.SetCanShoot(false);
+    }
+
+    void Equip5()
+    {
+        slot1.SetActive(false);
+        slot2.SetActive(false);
+        slot3.SetActive(false);
+        slot4.SetActive(false);
+        slot5.SetActive(true);
+        shoot.SetCanShoot(false);
     }
 }
