@@ -5,15 +5,9 @@ using UnityEngine.UI;
 public class Cooldown : MonoBehaviour
 {
     public Image[] weapons; // Array to store all weapon images
-    public float cooldown = 5.0f;
+    public Button[] cooldownButtons; // Array to store all cooldown buttons
+    [SerializeField] public float cooldown = 5.0f;
     private bool isCooldown = false;
-
-    // Add a reference to your UI buttons in the Unity Editor
-    public Button cooldownButton;
-    public Button cooldownButton1;
-    public Button cooldownButton2;
-    public Button cooldownButton3;
-    public Button cooldownButton4;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +19,10 @@ public class Cooldown : MonoBehaviour
         }
 
         // Add onClick listeners to the cooldown buttons
-        cooldownButton.onClick.AddListener(StartCooldown);
-        cooldownButton1.onClick.AddListener(StartCooldown);
-        cooldownButton2.onClick.AddListener(StartCooldown);
-        cooldownButton3.onClick.AddListener(StartCooldown);
-        cooldownButton4.onClick.AddListener(StartCooldown);
+        foreach (Button button in cooldownButtons)
+        {
+            button.onClick.AddListener(StartCooldown);
+        }
     }
 
     // Method to start the cooldown for all weapons
