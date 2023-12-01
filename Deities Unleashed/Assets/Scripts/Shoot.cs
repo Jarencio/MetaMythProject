@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
-    public CrossBowController crossBowController;
+    public CrossBowController bowControl;
 
     public Transform arrowSpawnPoint;
     public GameObject arrowPrefab;    
@@ -25,16 +25,6 @@ public class Shoot : MonoBehaviour
         attackButton = GameObject.Find("AttackBtn").GetComponent<Button>();
         attackButton.onClick.AddListener(OnAttackButtonClick);
 
-
-        crossBowController = FindObjectOfType<CrossBowController>(true);
-
-        if (crossBowController == null)
-        {
-            Debug.LogError("CrossBowController not found! Make sure it is attached to the GameObject.");
-            return;
-        }
-
-        UpdateButtonIcon();
     }
 
 
@@ -51,6 +41,8 @@ public class Shoot : MonoBehaviour
     public void ShootArrow()
     {
         ShootSound.Play();
+        bowControl.CrossbowAttack();
+
         var arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
         arrow.GetComponent<Rigidbody>().velocity = arrowSpawnPoint.forward * arrowSpeed;
     }
@@ -67,9 +59,4 @@ public class Shoot : MonoBehaviour
         canShoot = value;
     }
 
-    public void UpdateButtonIcon()
-    {
-        crossBowController.SetCrossBowState(canShoot, isOnCooldown);
-
-    }
 }

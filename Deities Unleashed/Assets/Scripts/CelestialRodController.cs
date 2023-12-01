@@ -15,6 +15,11 @@ public class CelestialRodController : MonoBehaviour
     int s;
     public CharacterLevelSystem CS;
 
+
+    public Transform projectileSpawnPoint;
+    public GameObject projectilePrefab;
+    [SerializeField] float projectileSpeed = 30;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +29,7 @@ public class CelestialRodController : MonoBehaviour
 
     public void OnClickRodAttack()
     {
-        if (canAttack)
+        if (canAttack && !isAttacking)
         {
             RodAttack();
             slashSound.Play();
@@ -34,17 +39,24 @@ public class CelestialRodController : MonoBehaviour
 
     public void RodAttack()
     {
-        isAttacking = true;
-        canAttack = false;
         Animator anim = rod.GetComponent<Animator>();
         anim.SetTrigger("attack");
+
+        var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
 
     }
 
     IEnumerator StartCooldown()
     {
+        isAttacking = true;
         yield return new WaitForSeconds(attackCooldown);
-        canAttack = true;
+        isAttacking = false;
+    }
+
+    public void SetCanShoot(bool value)
+    {
+        canAttack = value;
     }
 
 }
