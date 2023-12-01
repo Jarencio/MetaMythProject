@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpawnerRand : MonoBehaviour
 {
     public GameObject theEnemy;
-    public int xPos;
-    public int zPos;
+
     public int enemyCount;
+    public float spawnDelay = 10.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,21 +19,27 @@ public class SpawnerRand : MonoBehaviour
     {
         while (enemyCount < 3)  //Start Spawn
         {
-            xPos = Random.Range(-11, 42);
-            zPos = Random.Range(-15, 20);
-            Instantiate(theEnemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
-           
-            yield return new WaitForSeconds(0.2f);
+            // Respawn the item at a new position
+            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-5f, 5f), 0.5f, UnityEngine.Random.Range(-5f, 5f));
+
+            // Spawn a new item at the calculated position
+            theEnemy = Instantiate(theEnemy, respawnPosition, Quaternion.identity);
+            theEnemy.SetActive(true);
+
+            yield return new WaitForSeconds(spawnDelay);
             enemyCount += 1;
         }
 
         while (enemyCount < 50) //Continious Spaawn
         {
-            xPos = Random.Range(-11, 50);
-            zPos = Random.Range(-15, 20);
-            Instantiate(theEnemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
+            // Respawn the item at a new position
+            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-5f, 5f), 0.5f, UnityEngine.Random.Range(-5f, 5f));
 
-            yield return new WaitForSeconds(5f);
+            // Spawn a new item at the calculated position
+            theEnemy = Instantiate(theEnemy, respawnPosition, Quaternion.identity);
+            theEnemy.SetActive(true);
+
+            yield return new WaitForSeconds(spawnDelay);
             enemyCount += 1;
         }
     }

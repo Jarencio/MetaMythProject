@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
+    public GameObject enemy;
     public GameObject ProjectilePrefab;
     public Transform ProjectilePos;
     public EnemyTarget enemyTarget; // Reference to EnemyTarget
@@ -73,6 +74,9 @@ void Update()
 
             enemyBulletScript.damage = damage;
             enemyBulletScript.type = type;
+
+            Animator anim = enemy.GetComponent<Animator>();
+            anim.SetTrigger("attack");
 
         }
         else
