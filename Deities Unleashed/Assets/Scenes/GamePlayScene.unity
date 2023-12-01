@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 113816704}
   - component: {fileID: 113816703}
   - component: {fileID: 113816707}
+  - component: {fileID: 113816708}
   m_Layer: 5
   m_Name: AttackBtn 5
   m_TagString: Untagged
@@ -667,6 +668,23 @@ CanvasRenderer:
   m_GameObject: {fileID: 113816701}
   m_CullTransparentMesh: 1
 --- !u!114 &113816707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113816701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcaec76a8e25684bb71ee4026f540e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 113816705}
+  cooldownButtons:
+  - {fileID: 113816704}
+  cooldown: 5
+--- !u!114 &113816708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2946,6 +2964,23 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1538102051281877180, guid: c19ea996263106d48ad07abd2d729ed1,
     type: 3}
   projectileSpeed: 30
+--- !u!114 &349152527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349152520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcaec76a8e25684bb71ee4026f540e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 349152524}
+  cooldownButtons:
+  - {fileID: 349152523}
+  cooldown: 5
 --- !u!1 &349550564
 GameObject:
   m_ObjectHideFlags: 0
@@ -8004,6 +8039,7 @@ GameObject:
   - component: {fileID: 1019737062}
   - component: {fileID: 1019737061}
   - component: {fileID: 1019737063}
+  - component: {fileID: 1019737064}
   m_Layer: 0
   m_Name: Gods_Mayari
   m_TagString: Mayari
@@ -8099,6 +8135,7 @@ Transform:
   - {fileID: 367235035}
   - {fileID: 2074363230}
   - {fileID: 292511299}
+  - {fileID: 1409320544}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8485,6 +8522,25 @@ MonoBehaviour:
   enemyTarget: {fileID: 1019737057}
   shootingDistanceThreshold: 50
   type: 0
+--- !u!114 &1019737064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019737052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45232d63cc9c143468ee91e0890f7a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1019737052}
+  ProjectilePrefab: {fileID: 7652643149443253455, guid: 95bea532c1de3db40a3e2dc58c693605,
+    type: 3}
+  ProjectilePos: {fileID: 2112791986}
+  enemyTarget: {fileID: 1019737057}
+  shootingDistanceThreshold: 10
+  type: 2
 --- !u!1 &1050030475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8949,6 +9005,7 @@ GameObject:
   - component: {fileID: 1132495601}
   - component: {fileID: 1132495600}
   - component: {fileID: 1132495602}
+  - component: {fileID: 1132495603}
   m_Layer: 5
   m_Name: AttackBtn
   m_TagString: Untagged
@@ -9200,6 +9257,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rod: {fileID: 1216107775}
+--- !u!114 &1132495603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132495594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcaec76a8e25684bb71ee4026f540e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1132495598}
+  cooldownButtons:
+  - {fileID: 1132495597}
+  cooldown: 5
 --- !u!1 &1133407027
 GameObject:
   m_ObjectHideFlags: 0
@@ -10841,7 +10915,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1019737055}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1414597699 stripped
 MonoBehaviour:
@@ -13859,6 +13933,23 @@ MonoBehaviour:
   isAttacking: 1
   CrescentAttackButton: {fileID: 1797423985}
   CS: {fileID: 1763614752}
+--- !u!114 &1797423989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797423982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcaec76a8e25684bb71ee4026f540e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1797423986}
+  cooldownButtons:
+  - {fileID: 1797423985}
+  cooldown: 5
 --- !u!1 &1802727692
 GameObject:
   m_ObjectHideFlags: 0
