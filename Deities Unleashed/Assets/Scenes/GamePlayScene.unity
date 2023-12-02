@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3451324, g: 0.34342998, b: 0.3079929, a: 1}
+  m_IndirectSpecularColor: {r: 0.34513268, g: 0.34343022, b: 0.30799308, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   slashSound: {fileID: 0}
   rod: {fileID: 1050030475}
   canAttack: 1
-  attackCooldown: 1
+  attackCooldown: 20
   isAttacking: 0
   CrescentAttackButton: {fileID: 349152523}
   CS: {fileID: 0}
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   - {fileID: 349152524}
   cooldownButtons:
   - {fileID: 349152523}
-  cooldown: 5
+  cooldown: 20
 --- !u!1 &349550564
 GameObject:
   m_ObjectHideFlags: 0
@@ -7876,7 +7876,7 @@ MonoBehaviour:
   slashSound: {fileID: 827876382}
   sword: {fileID: 827876377}
   canAttack: 1
-  attackCooldown: 1.5
+  attackCooldown: 2
   isAttacking: 1
   swordAttackButton: {fileID: 995976179}
   CS: {fileID: 1763614752}
@@ -7896,7 +7896,7 @@ MonoBehaviour:
   - {fileID: 995976180}
   cooldownButtons:
   - {fileID: 995976179}
-  cooldown: 5
+  cooldown: 2
 --- !u!1 &1006938656
 GameObject:
   m_ObjectHideFlags: 0
@@ -8046,7 +8046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1019737053
 Animator:
   serializedVersion: 5
@@ -9146,7 +9146,7 @@ MonoBehaviour:
   attackButton: {fileID: 1132495597}
   ShootSound: {fileID: 1132495601}
   isOnCooldown: 0
-  cooldownDuration: 2
+  cooldownDuration: 3
   arrowSpeed: 300
 --- !u!82 &1132495601
 AudioSource:
@@ -9273,7 +9273,7 @@ MonoBehaviour:
   - {fileID: 1132495598}
   cooldownButtons:
   - {fileID: 1132495597}
-  cooldown: 5
+  cooldown: 3
 --- !u!1 &1133407027
 GameObject:
   m_ObjectHideFlags: 0
@@ -11110,12 +11110,12 @@ PrefabInstance:
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
@@ -13929,7 +13929,7 @@ MonoBehaviour:
   slashSound: {fileID: 827876382}
   crescent: {fileID: 492606604}
   canAttack: 1
-  attackCooldown: 1
+  attackCooldown: 1.5
   isAttacking: 1
   CrescentAttackButton: {fileID: 1797423985}
   CS: {fileID: 1763614752}
@@ -13949,7 +13949,7 @@ MonoBehaviour:
   - {fileID: 1797423986}
   cooldownButtons:
   - {fileID: 1797423985}
-  cooldown: 5
+  cooldown: 1.5
 --- !u!1 &1802727692
 GameObject:
   m_ObjectHideFlags: 0
@@ -16238,14 +16238,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a077f22ba5f48a1438306035e5eecf23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb0bf7fb2d352ab4a9005daa44f4eb77, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
