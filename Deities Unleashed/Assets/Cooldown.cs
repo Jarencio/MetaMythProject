@@ -7,7 +7,7 @@ public class Cooldown : MonoBehaviour
     public Image[] weapons; // Array to store all weapon images
     public Button[] cooldownButtons; // Array to store all cooldown buttons
     [SerializeField] public float cooldown = 5.0f;
-    private bool isCooldown = false;
+    public bool isCooldown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,13 @@ public class Cooldown : MonoBehaviour
         foreach (Button button in cooldownButtons)
         {
             button.onClick.AddListener(StartCooldown);
+        }
+    }
+
+    public void Fill(){
+            foreach (Image weapon in weapons)
+        {
+            weapon.fillAmount = 1;
         }
     }
 

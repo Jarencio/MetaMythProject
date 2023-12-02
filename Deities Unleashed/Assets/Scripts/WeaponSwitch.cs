@@ -7,12 +7,13 @@ public class WeaponSwitch : MonoBehaviour
 {
     public Shoot shoot;
     public SwordController Candle;
+    public CrescentController Cres;
     [SerializeField] GameObject slot1;
     [SerializeField] GameObject slot2;
     [SerializeField] GameObject slot3;
     [SerializeField] GameObject slot4;
     [SerializeField] GameObject slot5;
-
+    public Cooldown[] cool;
     public Button CrossBowButton;
     public Button SwordButton;
     public Button CrescentButton;
@@ -41,6 +42,9 @@ public class WeaponSwitch : MonoBehaviour
         currentWeapon = 0;
         Equip1();
         shoot.isOnCooldown = false;
+        cool[0].isCooldown = false;
+        cool[0].Fill();
+
     }
 
 
@@ -52,6 +56,9 @@ public class WeaponSwitch : MonoBehaviour
         currentWeapon = 1;
         Equip2();
         Candle.canAttack = true;
+        cool[1].isCooldown = false;
+        cool[1].Fill();
+
     }
 
     void SwitchToCrescent()
@@ -61,7 +68,10 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 2;
         Equip3();
-       
+        Cres.canAttack = true;
+        cool[2].isCooldown = false;      
+        cool[2].Fill();
+
     }
 
     void SwitchToRod()
@@ -71,6 +81,8 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 3;
         Equip4();
+        cool[3].isCooldown = false;
+        cool[3].Fill();
 
     }
 
@@ -81,6 +93,8 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 4;
         Equip5();
+        cool[4].isCooldown = false;
+        cool[4].Fill();
 
     }
 

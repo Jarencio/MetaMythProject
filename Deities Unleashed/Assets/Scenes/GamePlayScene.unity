@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34513268, g: 0.34343022, b: 0.30799308, a: 1}
+  m_IndirectSpecularColor: {r: 0.3451324, g: 0.34342998, b: 0.3079929, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -684,6 +684,7 @@ MonoBehaviour:
   cooldownButtons:
   - {fileID: 113816704}
   cooldown: 5
+  isCooldown: 0
 --- !u!114 &113816708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,6 +702,7 @@ MonoBehaviour:
   cooldownButtons:
   - {fileID: 113816704}
   cooldown: 5
+  isCooldown: 0
 --- !u!1 &121293859
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,11 +815,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoot: {fileID: 1132495600}
   Candle: {fileID: 995976182}
+  Cres: {fileID: 1797423988}
   slot1: {fileID: 1216107775}
   slot2: {fileID: 827876377}
   slot3: {fileID: 492606604}
   slot4: {fileID: 1050030475}
   slot5: {fileID: 1969290728}
+  cool:
+  - {fileID: 1132495603}
+  - {fileID: 995976183}
+  - {fileID: 1797423989}
+  - {fileID: 349152527}
+  - {fileID: 113816707}
   CrossBowButton: {fileID: 262043783}
   SwordButton: {fileID: 1006938658}
   CrescentButton: {fileID: 870679136}
@@ -1704,6 +1713,7 @@ MonoBehaviour:
   - {fileID: 534968782}
   - {fileID: 1309648075}
   cooldown: 5
+  isCooldown: 0
 --- !u!1001 &220137970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2981,6 +2991,7 @@ MonoBehaviour:
   cooldownButtons:
   - {fileID: 349152523}
   cooldown: 20
+  isCooldown: 0
 --- !u!1 &349550564
 GameObject:
   m_ObjectHideFlags: 0
@@ -7897,6 +7908,7 @@ MonoBehaviour:
   cooldownButtons:
   - {fileID: 995976179}
   cooldown: 2
+  isCooldown: 0
 --- !u!1 &1006938656
 GameObject:
   m_ObjectHideFlags: 0
@@ -9274,6 +9286,7 @@ MonoBehaviour:
   cooldownButtons:
   - {fileID: 1132495597}
   cooldown: 3
+  isCooldown: 0
 --- !u!1 &1133407027
 GameObject:
   m_ObjectHideFlags: 0
@@ -13950,6 +13963,7 @@ MonoBehaviour:
   cooldownButtons:
   - {fileID: 1797423985}
   cooldown: 1.5
+  isCooldown: 0
 --- !u!1 &1802727692
 GameObject:
   m_ObjectHideFlags: 0
