@@ -9,7 +9,7 @@ public class CelestialRodController : MonoBehaviour
 
     public GameObject rod;
     public bool canAttack = true;
-    public float attackCooldown = 1.0f;
+    public float attackCooldown = 20.0f;
     public bool isAttacking = false;
     public Button CrescentAttackButton;
     int s;
@@ -49,9 +49,9 @@ public class CelestialRodController : MonoBehaviour
 
     IEnumerator StartCooldown()
     {
-        isAttacking = true;
+        canAttack = true;
         yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
+        canAttack = false;
     }
 
     public void SetCanShoot(bool value)

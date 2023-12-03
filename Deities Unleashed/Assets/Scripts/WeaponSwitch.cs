@@ -19,6 +19,7 @@ public class WeaponSwitch : MonoBehaviour
     public Button CrescentButton;
     public Button RodButton;
     public Button SunButton;
+    public CelestialRodController CDR;
     public int currentWeapon = 0;
 
     void Awake()
@@ -81,6 +82,7 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 3;
         Equip4();
+        CDR.canAttack = true;
         cool[3].isCooldown = false;
         cool[3].Fill();
 

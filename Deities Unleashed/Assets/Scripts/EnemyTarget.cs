@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class EnemyTarget : MonoBehaviour
 {
     public float spawnOffsetDistance = 1.0f;
-    public ItemCollection Item;
+    public ItemCollection[] Item;
     public ExpParticleCollision expCollide;
     public GameObject healthprefabs;
     public GameObject bloodParticles;
@@ -18,7 +18,7 @@ public class EnemyTarget : MonoBehaviour
     public CharacterLevelSystem CS;
     public GameObject burningParticlesPrefab;
     public BoxCollider boxCollider1;
-
+    public int enemyspawn;
 
 
     public BoxCollider boxCollider;
@@ -329,11 +329,16 @@ public class EnemyTarget : MonoBehaviour
         Destroy(gameObject);
 
         // Deactivate the BoxCollider
+ 
         if (boxCollider != null) boxCollider.enabled = false;
-
+int randoms = Random.Range(0, 5);
+        if (randoms==2){
+      int item = Random.Range(0, 5);
+                Item[item].Here(enemyspawn);   
+        Item[item].RespawnItem();
+    }
         Debug.Log("Dead");
-       
-        Item.RespawnItem();
+
         expCollide.SpawnExpParticles();
 
     }

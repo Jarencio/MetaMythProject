@@ -8,10 +8,16 @@ public class ItemCollection : MonoBehaviour
 
     public GameObject ItemPrefab;
     public GameObject spawnedItem;
-    public GameObject enemyToDestroy;
-    public Transform spawnItemOn;
-
+    public GameObject[] enemyToDestroy;
+    public Transform[] spawnItemOn;
+    public CharacterLevelSystem CS;
+    public string function;
     public Inventory inventory;
+    public int enemyspawn;
+
+    public void Here(int ES){
+       enemyspawn = ES;
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -21,9 +27,9 @@ public class ItemCollection : MonoBehaviour
             OnCollected?.Invoke();
 
             // Destroy the enemy GameObject
-            if (enemyToDestroy != null)
+            if (enemyToDestroy[enemyspawn] != null)
             {
-                Destroy(enemyToDestroy);
+                Destroy(enemyToDestroy[enemyspawn]);
             }
 
             // Destroy the item GameObject
@@ -31,12 +37,20 @@ public class ItemCollection : MonoBehaviour
 
             // Spawn experience particles
          
-
+         if(function=="Item1"){
+ Debug.Log("1");
+         } else if (function=="Item2"){
+ Debug.Log("2");
+         } else if (function=="Item3"){
+ Debug.Log("3");
+         } else if (function=="Item4"){
+ Debug.Log("4");
+         } else if (function=="Item5"){
+ Debug.Log("5");
+         }
         }
         inventory.EnableAnimator1();
     }
-
-    
 
     /*public void RespawnItem()
     {
@@ -58,7 +72,7 @@ public class ItemCollection : MonoBehaviour
     {
         if (spawnedItem != null && spawnItemOn != null)
         {
-            Instantiate(spawnedItem, spawnItemOn.position, Quaternion.identity);
+            Instantiate(spawnedItem, spawnItemOn[enemyspawn].position, Quaternion.identity);
             spawnedItem.SetActive(true);
         }
     }
