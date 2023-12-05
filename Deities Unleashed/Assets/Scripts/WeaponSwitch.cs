@@ -82,7 +82,7 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 3;
         Equip4();
-        CDR.canAttack = true;
+        CDR.canShoot = true;
         cool[3].isCooldown = false;
         cool[3].Fill();
 

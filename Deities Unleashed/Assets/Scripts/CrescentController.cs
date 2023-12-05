@@ -12,7 +12,6 @@ public class CrescentController : MonoBehaviour
     public float attackCooldown = 1.0f;
     public bool isAttacking = false;
     public Button CrescentAttackButton;
-    int s;
     public CharacterLevelSystem CS;
 
     private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" };
@@ -80,14 +79,6 @@ public class CrescentController : MonoBehaviour
         int criticalRoll = Random.Range(2, 6);
         Debug.Log("Critical Roll: " + criticalRoll);
 
-        if (criticalRoll == 3)
-        {
-            s = 1;
-        }
-        else
-        {
-            s = 0;
-        }
 
         return damage;
     }

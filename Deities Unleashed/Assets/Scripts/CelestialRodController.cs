@@ -5,58 +5,64 @@ using UnityEngine.UI;
 
 public class CelestialRodController : MonoBehaviour
 {
-    public AudioSource slashSound;
-
     public GameObject rod;
-    public bool canAttack = true;
-    public float attackCooldown = 20.0f;
-    public bool isAttacking = false;
-    public Button CrescentAttackButton;
-    int s;
-    public CharacterLevelSystem CS;
+    public Transform arrowSpawnPoint;
+    public GameObject arrowPrefab;
+    public Button attackButton;
+    public AudioSource ShootSound;
+    public bool isOnCooldown = false;
+    public float cooldownDuration = 20.0f;
+    public float maxDistance = 2.0f;
+    [SerializeField] float arrowSpeed = 30;
 
-
-    public Transform projectileSpawnPoint;
-    public GameObject projectilePrefab;
-    [SerializeField] float projectileSpeed = 30;
+    public bool canShoot = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        slashSound = GetComponent<AudioSource>();
-        CrescentAttackButton.onClick.AddListener(OnClickRodAttack);
+        ShootSound = GetComponent<AudioSource>();
+        attackButton = GameObject.Find("AttackBtnRod").GetComponent<Button>();
+        attackButton.onClick.AddListener(OnAttackButtonClick);
+
     }
 
-    public void OnClickRodAttack()
+
+    public void OnAttackButtonClick()
     {
-        if (canAttack && !isAttacking)
+        
+        if (canShoot && !isOnCooldown)
         {
-            RodAttack();
-            slashSound.Play();
+            ShootArrow();
+            
             StartCoroutine(StartCooldown());
+            
         }
+
     }
 
-    public void RodAttack()
+    // Update is called once per frame
+    public void ShootArrow()
     {
+        ShootSound.Play();
         Animator anim = rod.GetComponent<Animator>();
         anim.SetTrigger("attack");
 
-        var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
-
+        var arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
+        // Limit the arrow's travel distance to 2 units        maxDistance = 2f;
+        arrow.GetComponent<Rigidbody>().velocity = arrowSpawnPoint.forward * Mathf.Min(arrowSpeed, maxDistance / Time.fixedDeltaTime);
     }
 
-    IEnumerator StartCooldown()
+    public IEnumerator StartCooldown()
     {
-        canAttack = true;
-        yield return new WaitForSeconds(attackCooldown);
-        canAttack = false;
+        isOnCooldown = true;
+        yield return new WaitForSeconds(cooldownDuration);
+        isOnCooldown = false;
+        
     }
 
     public void SetCanShoot(bool value)
     {
-        canAttack = value;
+        canShoot = value;
     }
 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3451324, g: 0.34342998, b: 0.3079929, a: 1}
+  m_IndirectSpecularColor: {r: 0.34513268, g: 0.34343022, b: 0.30799308, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -850,7 +850,7 @@ MonoBehaviour:
   CrescentButton: {fileID: 870679136}
   RodButton: {fileID: 534968782}
   SunButton: {fileID: 1309648075}
-  CDR: {fileID: 349152526}
+  CDR: {fileID: 349152528}
   currentWeapon: 0
 --- !u!1 &123772316 stripped
 GameObject:
@@ -2391,7 +2391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &300980222
 Transform:
   m_ObjectHideFlags: 0
@@ -2751,10 +2751,10 @@ GameObject:
   - component: {fileID: 349152524}
   - component: {fileID: 349152523}
   - component: {fileID: 349152522}
-  - component: {fileID: 349152526}
   - component: {fileID: 349152527}
+  - component: {fileID: 349152528}
   m_Layer: 5
-  m_Name: AttackBtn 4
+  m_Name: AttackBtnRod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2970,29 +2970,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349152520}
   m_CullTransparentMesh: 1
---- !u!114 &349152526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349152520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caaed096fe4c08942b10893119c027e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slashSound: {fileID: 0}
-  rod: {fileID: 1050030475}
-  canAttack: 1
-  attackCooldown: 20
-  isAttacking: 0
-  CrescentAttackButton: {fileID: 349152523}
-  CS: {fileID: 0}
-  projectileSpawnPoint: {fileID: 871175185}
-  projectilePrefab: {fileID: 1538102051281877180, guid: c19ea996263106d48ad07abd2d729ed1,
-    type: 3}
-  projectileSpeed: 30
 --- !u!114 &349152527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3009,8 +2986,31 @@ MonoBehaviour:
   - {fileID: 349152524}
   cooldownButtons:
   - {fileID: 349152523}
-  cooldown: 20
+  cooldown: 60
   isCooldown: 0
+--- !u!114 &349152528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349152520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaed096fe4c08942b10893119c027e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rod: {fileID: 1050030475}
+  arrowSpawnPoint: {fileID: 871175185}
+  arrowPrefab: {fileID: 1538102051281877180, guid: c19ea996263106d48ad07abd2d729ed1,
+    type: 3}
+  attackButton: {fileID: 349152523}
+  ShootSound: {fileID: 349152522}
+  isOnCooldown: 0
+  cooldownDuration: 60
+  maxDistance: 0.03
+  arrowSpeed: 30
+  canShoot: 1
 --- !u!1 &349550564
 GameObject:
   m_ObjectHideFlags: 0
@@ -3903,7 +3903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &473367668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5062,6 +5062,7 @@ GameObject:
   - component: {fileID: 699187789}
   - component: {fileID: 699187790}
   - component: {fileID: 699187791}
+  - component: {fileID: 699187792}
   m_Layer: 0
   m_Name: EnemyBalbal
   m_TagString: BalBal
@@ -5303,7 +5304,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699187778}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 158.3}
+  m_LocalPosition: {x: 0, y: 0, z: 171.8}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5346,7 +5347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699187778}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45232d63cc9c143468ee91e0890f7a88, type: 3}
   m_Name: 
@@ -5374,6 +5375,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &699187792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699187778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f878c0c7950f3945b9c58b2f1c3b71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullable: 1
 --- !u!1 &721926046
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,7 +6584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871175184}
   m_LocalRotation: {x: -0.9356358, y: 0.19810016, z: -0.14781308, w: 0.2519786}
-  m_LocalPosition: {x: -4.6, y: 18.7, z: -0.145}
+  m_LocalPosition: {x: 12.7, y: 33.7, z: -1.15}
   m_LocalScale: {x: 14.919279, y: 1.2261813, z: 3.711233}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9665,6 +9679,7 @@ MonoBehaviour:
   isOnCooldown: 0
   cooldownDuration: 3
   arrowSpeed: 300
+  canShoot: 1
 --- !u!82 &1132495601
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10204,6 +10219,7 @@ MonoBehaviour:
   isOnCooldown: 0
   cooldownDuration: 1.5
   arrowSpeed: 30
+  canShoot: 1
 --- !u!82 &1216107778
 AudioSource:
   m_ObjectHideFlags: 0

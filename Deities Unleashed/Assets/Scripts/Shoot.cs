@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] float arrowSpeed = 30;
 
-    private bool canShoot = true;
+    public bool canShoot = true;
 
     void Start()
     {
