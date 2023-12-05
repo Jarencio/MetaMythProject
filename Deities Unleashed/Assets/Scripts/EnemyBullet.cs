@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
        
@@ -33,11 +33,11 @@ public class EnemyBullet : MonoBehaviour
             // Use Rigidbody velocity to move the bullet
             rb.velocity = direction * force;
         
-        if(type==0){
-           Destroy(gameObject, timeToLive);
-        } else{
-           Destroy(gameObject, timeToLives);          
-        }
+            if(type==0){
+               Destroy(gameObject, timeToLive);
+            } else{
+               Destroy(gameObject, timeToLives);
+            }
 
 
         }

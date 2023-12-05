@@ -4847,7 +4847,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: -491648880359809682}
   force: 30
-  damage: 300
+  damage: 150
   timeToLive: 2
   timeToLives: 1
   type: 0
@@ -19086,6 +19086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5219d011cae831244a1e19ec1935001a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
   GRAVITY_PULL: 150
 --- !u!1 &1539949049098741395
 GameObject:
