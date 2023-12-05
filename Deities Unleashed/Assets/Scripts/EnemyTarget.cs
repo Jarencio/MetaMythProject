@@ -39,7 +39,11 @@ public class EnemyTarget : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+    Levels();
+    }
+
+    public void Levels(){
+                anim = GetComponent<Animator>();
         deathSound = GetComponent<AudioSource>();
 
         Debug.Log("Health: " + Health);
@@ -331,7 +335,7 @@ public class EnemyTarget : MonoBehaviour
         // Deactivate the BoxCollider
  
         if (boxCollider != null) boxCollider.enabled = false;
-int randoms = Random.Range(0, 5);
+int randoms = Random.Range(2,2);
         if (randoms==2){
       int item = Random.Range(0, 5);
                 Item[item].Here(enemyspawn);   

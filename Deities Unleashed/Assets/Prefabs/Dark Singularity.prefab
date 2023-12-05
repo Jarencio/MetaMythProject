@@ -19209,3 +19209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0da591fc00cc974885a23761a16117c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CS: {fileID: 0}
+  minDamage: 5
+  maxDamage: 10

@@ -9,9 +9,8 @@ public class Arrow : MonoBehaviour
     [SerializeField] int minDamage; // Minimum damage
     [SerializeField] int maxDamage; // Maximum damage
 
-
     // Define the tags that the arrow should compare against
-    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" ,"Mayari"};
+    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle", "Mayari" };
 
     private bool damageApplied = false; // Flag to track if damage has already been applied
 
@@ -36,6 +35,7 @@ public class Arrow : MonoBehaviour
         minDamage = 2 + (3 * CS.currentLevel);
         maxDamage = 10 + (5 * CS.currentLevel);
         Debug.Log("" + minDamage + " & " + maxDamage);
+
         // Check if damage has already been applied
         if (damageApplied)
             return;
@@ -46,6 +46,7 @@ public class Arrow : MonoBehaviour
         // Generate a random number between 1 and 10 for critical hit
         int criticalRoll = Random.Range(1, 11);
         Debug.Log("Critical: " + criticalRoll);
+
         // Check for a critical hit (e.g., if the roll is 2, add 1000 damage)
         if (criticalRoll == 2)
         {
@@ -58,12 +59,27 @@ public class Arrow : MonoBehaviour
             if (collision.gameObject.CompareTag(targetTag))
             {
                 EnemyTarget enemyDamageReceiver = collision.gameObject.GetComponent<EnemyTarget>();
+                Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+
                 if (enemyDamageReceiver != null)
                 {
+                    int s = 0;
                     enemyDamageReceiver.TakeDamage(damage);
                     Debug.Log("Applied Damage: " + damage);
+
+                    // Freeze the position of the collided object
+                    if (enemyRigidbody != null)
+                    {
+                        enemyRigidbody.constraints = RigidbodyConstraints.FreezePosition;
+                        s = 1;
+                    } if (s == 1){
+                        enemyRigidbody.constraints = RigidbodyConstraints.None;
+                        s = 0;
+                    }
+
                     damageApplied = true; // Set the flag to true to indicate damage has been applied
                 }
+
                 Destroy(gameObject);
                 return; // Exit the loop once we've found a matching tag
             }

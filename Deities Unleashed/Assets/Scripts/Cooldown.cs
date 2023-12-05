@@ -8,7 +8,10 @@ public class Cooldown : MonoBehaviour
     public Button[] cooldownButtons; // Array to store all cooldown buttons
     [SerializeField] public float cooldown = 5.0f;
     public bool isCooldown = false;
-
+    public float timer;
+    // Variable to store the current timer value
+    public float currentTimerValue;
+    public Button[] pressable;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +28,9 @@ public class Cooldown : MonoBehaviour
         }
     }
 
-    public void Fill(){
-            foreach (Image weapon in weapons)
+    public void Fill()
+    {
+        foreach (Image weapon in weapons)
         {
             weapon.fillAmount = 1;
         }
@@ -41,12 +45,18 @@ public class Cooldown : MonoBehaviour
         }
     }
 
+    // Coroutine to perform the cooldown
     IEnumerator PerformCooldown()
     {
+        foreach (Button button in pressable)
+        {
+            button.interactable = false;
+        }
+
         isCooldown = true;
 
-        // Gradually fill up all weapon images
-        float timer = 0f;
+        // Continue the cooldown from the stored timer value
+     timer = currentTimerValue;
         while (timer < cooldown)
         {
             timer += Time.deltaTime;
@@ -66,6 +76,19 @@ public class Cooldown : MonoBehaviour
             weapon.fillAmount = 1;
         }
 
+        foreach (Button button in pressable)
+        {
+            button.interactable = true;
+        }
+
         isCooldown = false;
+        currentTimerValue = 0;
+    }
+
+    // Method to store the current timer value
+    public void StoreTimerValue(float timerValue)
+    {
+        currentTimerValue = cooldown - timerValue;
+        StartCoroutine(PerformCooldown());
     }
 }
