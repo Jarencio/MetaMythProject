@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 278052400148602844}
   - component: {fileID: 8819772752413968039}
   - component: {fileID: 8688517802179592949}
+  - component: {fileID: 7526199194145351214}
   m_Layer: 0
   m_Name: BIGSUNSWORD
   m_TagString: Untagged
@@ -113,5 +114,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.526245, y: 8.460805, z: 1.312478}
-  m_Center: {x: -0.04559326, y: 1.1696053, z: 0.02717781}
+  m_Size: {x: 5.6097064, y: 1.2097603, z: 5.494556}
+  m_Center: {x: -0.04387894, y: -2.4559186, z: 0.18529053}
+--- !u!114 &7526199194145351214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278052400148602786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672cc25f501350945aaccce2dfef45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CS: {fileID: 0}
+  life: 2
+  minDamage: 20
+  maxDamage: 20
