@@ -21,7 +21,7 @@ public class EnemyTarget : MonoBehaviour
     public int enemyspawn;
 
 
-    public BoxCollider boxCollider;
+    public CircleCollider2D cicleCollider;
 
     public int Level;
     public float Health;
@@ -165,7 +165,7 @@ public class EnemyTarget : MonoBehaviour
             Defense = 4f + (2f * Level);
         }
 
-                else if(objectTag == "Mayari")
+    else if(objectTag == "Mayari")
     {
                         Level = 8;
             Health = 500f;
@@ -180,8 +180,22 @@ public class EnemyTarget : MonoBehaviour
     else if(objectTag == "Bathala"){
 
     }
+
+    else if (objectTag == "Spawner") 
+    {
+            Level = 5;
+            Health = 200f;
+            Defense = 0f;
+            expgain = 1000;
+
+
+    }
+
+
+
         expgain = 2 + (2 * Level);
         MaxHealth = Health;
+
         if (healthbar != null)
         {
             pop.Lvl(Level);
@@ -192,6 +206,7 @@ public class EnemyTarget : MonoBehaviour
 
 
     }
+    
 
     public void TakeDamage(float amount)
     {
@@ -201,10 +216,17 @@ public class EnemyTarget : MonoBehaviour
         float a = amount - Defense;
         
         if (objectTag == "Mayari"){
-        if (a > 1000)
-        {
-            a -= 1000;
+            if (a > 1000)
+            {
+                a -= 1000;
+            }
         }
+        else if(objectTag == "Spawner")
+        {
+            if(a > 1000)
+            {
+                a -= 1000;
+            }
         }
     
         if (a < 0)
@@ -334,16 +356,17 @@ public class EnemyTarget : MonoBehaviour
 
         // Deactivate the BoxCollider
  
-        if (boxCollider != null) boxCollider.enabled = false;
-int randoms = Random.Range(2,2);
-        if (randoms==2){
-      int item = Random.Range(0, 5);
-                Item[item].Here(enemyspawn);   
-        Item[item].RespawnItem();
-    }
-        Debug.Log("Dead");
+        if (cicleCollider != null) cicleCollider.enabled = false;
 
-        expCollide.SpawnExpParticles();
+            int randoms = Random.Range(2,2);
+        if (randoms==2){
+        int item = Random.Range(0, 5);
+                Item[item].Here(enemyspawn);   
+            Item[item].RespawnItem();
+        }
+            Debug.Log("Dead");
+
+            expCollide.SpawnExpParticles();
 
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - BalBal
   - TikTik
   - Mayari
+  - Spawner
   layers:
   - Default
   - TransparentFX

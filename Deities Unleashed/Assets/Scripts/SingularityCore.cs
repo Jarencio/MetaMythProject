@@ -5,7 +5,7 @@ public class SingularityCore : MonoBehaviour
     public CharacterLevelSystem CS;
     [SerializeField] int minDamage; // Minimum damage
     [SerializeField] int maxDamage; // Maximum damage
-    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" ,"Mayari"};
+    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" ,"Mayari", "Spawner" };
     private bool damageApplied = false; // Flag to track if damage has already been applied
 
 void OnTriggerStay(Collider other)
