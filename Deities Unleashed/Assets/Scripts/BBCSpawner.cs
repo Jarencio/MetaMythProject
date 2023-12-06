@@ -111,6 +111,8 @@ public class BBCSpawner : MonoBehaviour
     {
         if (damageApplied) // Skip if damage has already been applied
             return;
+        // Reset the damageApplied flag for a new collision
+        damageApplied = false;
         // Generate a random damage value between minDamage and maxDamage
         int damage = Random.Range(minDamage, maxDamage + 1); // +1 to include the maximum value
 

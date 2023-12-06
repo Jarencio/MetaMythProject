@@ -75,6 +75,7 @@ public class SunController : MonoBehaviour
     public void SetCanShoot(bool value)
     {
         canShoot = value;
+
     }
 
     public void DisableKamays()
