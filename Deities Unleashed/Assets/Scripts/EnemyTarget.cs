@@ -360,7 +360,7 @@ public class EnemyTarget : MonoBehaviour
 
             int randoms = Random.Range(2,2);
         if (randoms==2){
-        int item = Random.Range(0, 5);
+        int item = Random.Range(0, Item.Length);
                 Item[item].Here(enemyspawn);   
             Item[item].RespawnItem();
         }

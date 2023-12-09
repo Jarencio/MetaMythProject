@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ItemCollection : MonoBehaviour
 {
     public static event Action OnCollected;
-
     public GameObject ItemPrefab;
     public GameObject spawnedItem;
     public GameObject[] enemyToDestroy;
@@ -37,11 +36,11 @@ public class ItemCollection : MonoBehaviour
 
             // Spawn experience particles
          
-         if(function=="Item1"){
- Debug.Log("1");
-         } else if (function=="Item2"){
- Debug.Log("2");
-         } else if (function=="Item3"){
+         if(function=="HealthBoost"){
+CS.currenthealth += 20;
+CS.health += 20;
+         } else if (function=="DefenseBoost"){
+ CS.defense += 2;         } else if (function=="Item3"){
  Debug.Log("3");
          } else if (function=="Item4"){
  Debug.Log("4");

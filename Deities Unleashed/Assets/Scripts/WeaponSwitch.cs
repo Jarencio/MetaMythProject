@@ -8,6 +8,7 @@ public class WeaponSwitch : MonoBehaviour
     public Shoot shoot;
     public SwordController Candle;
     public CrescentController Cres;
+    public SunController Sun;
     [SerializeField] GameObject slot1;
     [SerializeField] GameObject slot2;
     [SerializeField] GameObject slot3;
@@ -95,6 +96,7 @@ public class WeaponSwitch : MonoBehaviour
 
         currentWeapon = 4;
         Equip5();
+        Sun.isOnCooldown = false;
         cool[4].isCooldown = false;
         cool[4].Fill();
 
