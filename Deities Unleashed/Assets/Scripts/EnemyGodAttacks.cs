@@ -7,6 +7,7 @@ public class EnemyGodAttacks : MonoBehaviour
     public GameObject enemy;
     public GameObject ProjectilePrefab;
     public Transform ProjectilePos;
+    public Transform parent;
     public EnemyTarget enemyTarget; // Reference to EnemyTarget
     public float shootingDistanceThreshold = 10f;
     private float timer;
@@ -58,6 +59,7 @@ public class EnemyGodAttacks : MonoBehaviour
     void Shoot()
     {
         GameObject projectileInstance = Instantiate(ProjectilePrefab, ProjectilePos.position, Quaternion.identity);
+        projectileInstance.transform.SetParent(parent);
 
         // Pass the reference to EnemyTarget to the EnemyBullet script
         EnemyBullet enemyBulletScript = projectileInstance.GetComponent<EnemyBullet>();
