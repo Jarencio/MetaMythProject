@@ -19149,7 +19149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5219d011cae831244a1e19ec1935001a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 465225057}
   GRAVITY_PULL: 300
 --- !u!1 &1539949049098741395
 GameObject:
@@ -19210,5 +19209,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CS: {fileID: 0}
-  minDamage: 5
-  maxDamage: 10

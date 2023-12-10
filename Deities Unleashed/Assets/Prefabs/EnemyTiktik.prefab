@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2677510078449030357
 RectTransform:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   Item:
   - {fileID: 0}
   - {fileID: 0}
-  expCollide: {fileID: 5476218374633267861}
+  expCollide: {fileID: 0}
   healthprefabs: {fileID: 8099319100597143323}
   bloodParticles: {fileID: 2450537656391660581, guid: 260e89a585c16a94cab13ffc6fdb44bf,
     type: 3}
@@ -427,18 +427,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2677510077908710472}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5476218374633267861 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7986855359513712349, guid: 516b373689108834b914f05ead3b2792,
-    type: 3}
-  m_PrefabInstance: {fileID: 2677510077908710472}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b1818c56363484ebfb608b818024cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2677510078106204326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454,12 +442,12 @@ PrefabInstance:
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
