@@ -14,6 +14,7 @@ public class ItemCollection : MonoBehaviour
     public Inventory inventory;
     public int enemyspawn;
     public Transform newItemParent; // Public field to hold the new parent
+    public GameObject[] Enables;
 
     public void Here(int ES){
        enemyspawn = ES;
@@ -21,6 +22,7 @@ public class ItemCollection : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if(inventory.s<10){
         if (other.CompareTag("Player"))
         {
             Debug.Log("COLLECTED");
@@ -41,13 +43,19 @@ public class ItemCollection : MonoBehaviour
 CS.currenthealth += 20;
 CS.health += 20;
          } else if (function=="DefenseBoost"){
- CS.defense += 2;         } else if (function=="Item3"){
+ CS.defense += 2;        
+  } else if (function=="Item3"){
  Debug.Log("3");
          } else if (function=="Item4"){
  Debug.Log("4");
          } else if (function=="Item5"){
  Debug.Log("5");
          }
+        int x = inventory.s;
+        Debug.Log("x: " +x);
+        Enables[x].SetActive(true);
+        inventory.s++;
+        }
         }
         inventory.EnableAnimator1();
     }
@@ -81,6 +89,9 @@ CS.health += 20;
 
             // Set the clone (newly instantiated item) to active
             newItem.SetActive(true);
+
+            Destroy(newItem, 5f);
+
         }
     }
 }

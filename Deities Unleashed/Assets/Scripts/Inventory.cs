@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public Animator item1anim;
-
+    public int s = 0;
     public void Start()
     {
         if (item1anim == null)

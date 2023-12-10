@@ -80,14 +80,14 @@ public class EnemyTarget : MonoBehaviour
         }
         else if (objectTag == "BalBal")
         {
-            Health = 20f + (10f * Level);
+            Health = 15f + (10f * Level);
             MinDmg = 7f + (3f * Level);
             MaxDmg = 12f + (5f * Level);
             Defense = 3f + (2f * Level);
         }
         else if (objectTag == "TikTik")
         {
-            Health = 30f + (10f * Level);
+            Health = 20f + (10f * Level);
             MinDmg = 10f + (3f * Level);
             MaxDmg = 15f + (5f * Level);
             Defense = 4f + (2f * Level);

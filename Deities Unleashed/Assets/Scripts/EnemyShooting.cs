@@ -11,7 +11,7 @@ public class EnemyShooting : MonoBehaviour
     public float shootingDistanceThreshold = 10f;
     private float timer;
     public int type;
-
+    public Transform clone;
     void Start()
     {
         // Assuming EnemyTarget is on the same GameObject as EnemyShooting
@@ -58,7 +58,7 @@ void Update()
     void Shoot()
     {
         GameObject projectileInstance = Instantiate(ProjectilePrefab, ProjectilePos.position, Quaternion.identity);
-
+        projectileInstance.transform.SetParent(clone);
         // Pass the reference to EnemyTarget to the EnemyBullet script
         EnemyBullet enemyBulletScript = projectileInstance.GetComponent<EnemyBullet>();
         if (enemyBulletScript != null)
@@ -74,10 +74,10 @@ void Update()
 
             enemyBulletScript.damage = damage;
             enemyBulletScript.type = type;
-
+       
             Animator anim = enemy.GetComponent<Animator>();
             anim.SetTrigger("attack");
-
+           
         }
         else
         {
