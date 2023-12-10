@@ -70,8 +70,8 @@ public class CrescentController : MonoBehaviour
 
     public int CalculateSwordDamage()
     {
-        int minDamage = 2 + (3 * CS.currentLevel);
-        int maxDamage = 10 + (5 * CS.currentLevel);
+        int minDamage = 5 + (3 * CS.currentLevel);
+        int maxDamage = 15 + (5 * CS.currentLevel);
 
         int damage = Random.Range(minDamage, maxDamage + 1);
         Debug.Log("Calculated Damage: " + damage);

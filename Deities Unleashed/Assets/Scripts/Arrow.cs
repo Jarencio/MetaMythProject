@@ -32,8 +32,8 @@ public class Arrow : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        minDamage = 2 + (3 * CS.currentLevel);
-        maxDamage = 10 + (5 * CS.currentLevel);
+        minDamage = 5 + (3 * CS.currentLevel);
+        maxDamage = 15 + (5 * CS.currentLevel);
         Debug.Log("" + minDamage + " & " + maxDamage);
 
         // Check if damage has already been applied

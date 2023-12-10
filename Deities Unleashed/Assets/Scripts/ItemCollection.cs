@@ -13,6 +13,7 @@ public class ItemCollection : MonoBehaviour
     public string function;
     public Inventory inventory;
     public int enemyspawn;
+    public Transform newItemParent; // Public field to hold the new parent
 
     public void Here(int ES){
        enemyspawn = ES;
@@ -67,12 +68,19 @@ CS.health += 20;
         spawnedItem.SetActive(true);
 
     }*/
+
     public void RespawnItem()
     {
-        if (spawnedItem != null && spawnItemOn != null)
+        if (spawnedItem != null && newItemParent != null)
         {
-            Instantiate(spawnedItem, spawnItemOn[enemyspawn].position, Quaternion.identity);
-            spawnedItem.SetActive(true);
+            // Instantiate a new item at the specified position
+            GameObject newItem = Instantiate(spawnedItem, spawnItemOn[enemyspawn].position, Quaternion.identity);
+
+            // Set the parent of the new item to the specified parent reference
+            newItem.transform.SetParent(newItemParent);
+
+            // Set the clone (newly instantiated item) to active
+            newItem.SetActive(true);
         }
     }
 }
