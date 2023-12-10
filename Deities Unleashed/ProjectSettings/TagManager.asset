@@ -10,6 +10,7 @@ TagManager:
   - TikTik
   - Mayari
   - Spawner
+  - Cyclops
   layers:
   - Default
   - TransparentFX

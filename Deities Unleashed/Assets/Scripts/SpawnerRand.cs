@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnerRand : MonoBehaviour
 {
-    public GameObject theEnemy;
+    public GameObject[] theEnemy;
     public Transform parentTransform; // Reference to the parent transform
 
     public int enemyCount;
@@ -19,11 +19,15 @@ public class SpawnerRand : MonoBehaviour
     {
         while (enemyCount < 3)  //Start Spawn
         {
+            // Choose a random index from the enemies array
+            int randomEnemyIndex = Random.Range(0, theEnemy.Length);
+
             // Respawn the item at a new position
-            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-5f, 5f), 0.5f, UnityEngine.Random.Range(-5f, 5f));
+            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-25, 25), 0.5f, UnityEngine.Random.Range(-10, -20));
+            Debug.Log("Respawn Position: " + respawnPosition);
 
             // Spawn a new item at the calculated position
-            GameObject newEnemy = Instantiate(theEnemy, respawnPosition, Quaternion.identity);
+            GameObject newEnemy = Instantiate(theEnemy[randomEnemyIndex], respawnPosition, Quaternion.identity);
 
             // Set the parent of the newEnemy to the specified parentTransform
             newEnemy.transform.SetParent(parentTransform);
@@ -37,11 +41,14 @@ public class SpawnerRand : MonoBehaviour
 
         while (enemyCount < 50) //Continuous Spawn
         {
-            // Respawn the item at a new position
-            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-5f, 5f), 0.5f, UnityEngine.Random.Range(-5f, 5f));
+            // Choose a random index from the enemies array
+            int randomEnemyIndex = Random.Range(0, theEnemy.Length);
 
+            // Respawn the item at a new position
+            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-25, 25), 0.5f, UnityEngine.Random.Range(-10f, -20f));
+            Debug.Log("Respawn Position: " + respawnPosition);
             // Spawn a new item at the calculated position
-            GameObject newEnemy = Instantiate(theEnemy, respawnPosition, Quaternion.identity);
+            GameObject newEnemy = Instantiate(theEnemy[randomEnemyIndex], respawnPosition, Quaternion.identity);
 
             // Set the parent of the newEnemy to the specified parentTransform
             newEnemy.transform.SetParent(parentTransform);

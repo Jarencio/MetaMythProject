@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2607514143776289370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -174,9 +174,6 @@ MonoBehaviour:
   Item:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   expCollide: {fileID: 5402282080784280522}
   healthprefabs: {fileID: 8169849380375860788}
   bloodParticles: {fileID: 2450537656391660581, guid: 260e89a585c16a94cab13ffc6fdb44bf,
@@ -189,7 +186,7 @@ MonoBehaviour:
     type: 3}
   boxCollider1: {fileID: 2607514143776289372}
   enemyspawn: 0
-  boxCollider: {fileID: 2607514143776289372}
+  cicleCollider: {fileID: 0}
   Level: 0
   Health: 20
   MaxHealth: 0
@@ -351,6 +348,7 @@ MonoBehaviour:
   enemyTarget: {fileID: 2607514143776289362}
   shootingDistanceThreshold: 50
   type: 0
+  clone: {fileID: 0}
 --- !u!54 &2607514143776289374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -363,10 +361,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &2607514143776289345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,12 +490,12 @@ PrefabInstance:
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
