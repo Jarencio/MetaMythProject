@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class CharacterLevelSystem : MonoBehaviour
 {
+    public Button artificialBtn; //temporary
+    public GameObject tempBoss;
+
+
     public GameObject deadScreen;
     public Player P;
     public int currentLevel = 1;
@@ -116,6 +121,27 @@ public class CharacterLevelSystem : MonoBehaviour
 
     void Start()
     {
+
         LvlBar.UpdateHealthBar(currentExp, expToNextLevel);
+        artificialBtn.onClick.AddListener(OnAttackButtonCLick); // temporary
+    }
+
+    
+
+    //Temporary
+    public void OnAttackButtonCLick()
+    {
+        Debug.Log("CLick");
+        health += 200; // Increase health by 10 for each level
+        defense += 20; // Increase defense by 2 for each level
+        currenthealth += 200;
+        pops.PlayerLvl(currentLevel = 8);
+
+        Invoke("spawnBoss", 1.5f);
+    }
+
+    public void spawnBoss()
+    {
+        tempBoss.SetActive(true);
     }
 }
