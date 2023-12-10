@@ -131,8 +131,6 @@ MonoBehaviour:
   rb: {fileID: 4095338787042782993}
   force: 40
   damage: 20
-  timeToLive: 5
-  s: 0
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  timeToLive: 3
+  timeToLives: 1
+  type: 0
