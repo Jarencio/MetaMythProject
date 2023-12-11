@@ -55,11 +55,11 @@ GameObject:
   - component: {fileID: 637286678}
   m_Layer: 0
   m_Name: EnemyPhoenix
-  m_TagString: BalBal
+  m_TagString: Phoenix
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5007857433091198705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -193,8 +193,7 @@ MonoBehaviour:
   Item: []
   expCollide: {fileID: 3145897857865463441}
   healthprefabs: {fileID: 1166882247780716876}
-  bloodParticles: {fileID: 2450537656391660581, guid: 260e89a585c16a94cab13ffc6fdb44bf,
-    type: 3}
+  bloodParticles: {fileID: 0}
   pop: {fileID: 1166882248492676431}
   deathSound: {fileID: 5007857433091198708}
   Pref: {fileID: 209162517146901333, guid: 1a5fe5236d53d714ca30ee1f5372771c, type: 3}
@@ -412,6 +411,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8054422128920257851, guid: 516b373689108834b914f05ead3b2792,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054422128920257851, guid: 516b373689108834b914f05ead3b2792,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8054422128920257853, guid: 516b373689108834b914f05ead3b2792,
         type: 3}
       propertyPath: m_Name
@@ -457,12 +466,12 @@ PrefabInstance:
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6147100086417326000, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
