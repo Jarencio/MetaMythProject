@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3451324, g: 0.34342998, b: 0.3079929, a: 1}
+  m_IndirectSpecularColor: {r: 0.34513268, g: 0.34343022, b: 0.30799308, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3326,7 +3326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rod: {fileID: 1050030475}
   arrowSpawnPoint: {fileID: 871175185}
-  arrowPrefab: {fileID: 0}
+  arrowPrefab: {fileID: 1538102051281877180, guid: c19ea996263106d48ad07abd2d729ed1,
+    type: 3}
   attackButton: {fileID: 349152523}
   ShootSound: {fileID: 349152522}
   isOnCooldown: 0
@@ -12766,6 +12767,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500300852}
   m_CullTransparentMesh: 1
+--- !u!114 &1525639996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7651956419813018282, guid: 02271e405e4f5ff45b48cb27183bdb70,
+    type: 3}
+  m_PrefabInstance: {fileID: 4575612312819405805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d6480a05285984aad83aeb8f4f09f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544689647
 GameObject:
   m_ObjectHideFlags: 0
@@ -18927,7 +18940,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthbar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1525639996}
     - target: {fileID: 4575612312614264844, guid: 02271e405e4f5ff45b48cb27183bdb70,
         type: 3}
       propertyPath: expCollide
@@ -18941,7 +18954,7 @@ PrefabInstance:
     - target: {fileID: 4575612312614264881, guid: 02271e405e4f5ff45b48cb27183bdb70,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4575612312614264882, guid: 02271e405e4f5ff45b48cb27183bdb70,
         type: 3}
@@ -19011,12 +19024,12 @@ PrefabInstance:
     - target: {fileID: 7651956418705268532, guid: 02271e405e4f5ff45b48cb27183bdb70,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7651956418705268532, guid: 02271e405e4f5ff45b48cb27183bdb70,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02271e405e4f5ff45b48cb27183bdb70, type: 3}
