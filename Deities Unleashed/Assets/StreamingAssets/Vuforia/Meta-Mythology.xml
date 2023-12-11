@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="respawn112" size="1.000000 0.986979" />
+    <ImageTarget name="respawn111" size="1.000000 0.986979" />
+    <ImageTarget name="moon" size="1.000000 0.971354" />
+    <ImageTarget name="Mayari" size="1.000000 0.989258" />
+    <ImageTarget name="Respawn" size="1.000000 0.973958" />
+    <ImageTarget name="Stage1" size="1.000000 1.215965" />
     <ImageTarget name="WolfScan" size="1.000000 1.442029" />
     <ImageTarget name="GolemScan" size="1.000000 1.180706" />
     <ImageTarget name="BalbalScan" size="1.000000 0.892934" />

@@ -169,8 +169,8 @@ public class EnemyTarget : MonoBehaviour
     {
                         Level = 8;
             Health = 500f;
-            MinDmg = 40f;
-            MaxDmg = 60f;
+            MinDmg = 70f;
+            MaxDmg = 90f;
             Defense = 0f;
             expgain = 2000;
     }
@@ -184,9 +184,9 @@ public class EnemyTarget : MonoBehaviour
     else if (objectTag == "Spawner") 
     {
             Level = 5;
-            Health = 200f;
+            Health = 500f;
             Defense = 0f;
-            expgain = 1000;
+            expgain = 0;
 
 
     }
@@ -358,7 +358,7 @@ public class EnemyTarget : MonoBehaviour
  
         if (cicleCollider != null) cicleCollider.enabled = false;
 
-            int randoms = Random.Range(2,2);
+            int randoms = Random.Range(0,6);
         if (randoms==2){
         int item = Random.Range(0, Item.Length);
                 Item[item].Here(enemyspawn);   

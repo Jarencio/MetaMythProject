@@ -90,7 +90,7 @@ CS.health += 20;
             // Set the clone (newly instantiated item) to active
             newItem.SetActive(true);
 
-            Destroy(newItem, 5f);
+            Destroy(newItem, 20f);
 
         }
     }
