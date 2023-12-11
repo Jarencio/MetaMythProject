@@ -172,7 +172,6 @@ public class EnemyTarget : MonoBehaviour
             MinDmg = 70f;
             MaxDmg = 90f;
             Defense = 0f;
-            expgain = 2000;
     }
     else if(objectTag == "Mapulon"){
 
@@ -190,6 +189,11 @@ public class EnemyTarget : MonoBehaviour
 
 
     }
+            if(objectTag == "Mayari"){
+
+        expgain = 20000;
+
+        }
 
 
 
