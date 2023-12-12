@@ -10,6 +10,11 @@ public class CharacterLevelSystem : MonoBehaviour
     public GameObject tempBoss;
 
 
+    public float regenerationAmount = 5;
+    public float regenerationTimer = 10f;
+    public float regenerationCooldown = 10f;
+
+
     public GameObject deadScreen;
     public Player P;
     public int currentLevel = 1;
@@ -93,15 +98,24 @@ public class CharacterLevelSystem : MonoBehaviour
 
     void Update()
     {
-        // Check if the 'P' key is pressed
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            int points = 1;
-            GainExperience(points);
-            int h = 20;
-            TakeDamage(h);
-        }
+         regenerationTimer -= Time.deltaTime;
 
+        if (regenerationTimer <= 0)
+        {
+            float previousHealth = currenthealth;
+            currenthealth = Mathf.Min(currenthealth + regenerationAmount, health);
+
+            // Ensure health doesn't go above the maximum
+            if (currenthealth > health)
+            {
+                currenthealth = health;
+            }
+
+            HealthBar.UpdateHealthBar(currenthealth, health);
+            regenerationTimer = regenerationCooldown;
+
+            Debug.Log($"Health Regenerated: {previousHealth} -> {currenthealth}");
+        }
     }
 
     public void TakeDamage(int amount)

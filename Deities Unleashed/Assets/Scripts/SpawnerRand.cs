@@ -5,7 +5,8 @@ public class SpawnerRand : MonoBehaviour
 {
     public GameObject[] theEnemy;
     public Transform parentTransform; // Reference to the parent transform
-
+    public Transform UnparentTransform; // Reference to the parent transform 
+    public GameObject targetObject;
     public int enemyCount;
     public float spawnDelay = 10.0f;
 
@@ -15,49 +16,53 @@ public class SpawnerRand : MonoBehaviour
         StartCoroutine(EnemyDrop());
     }
 
-    IEnumerator EnemyDrop()
+IEnumerator EnemyDrop()
+{
+    while (enemyCount < 3)  // Start Spawn
     {
-        while (enemyCount < 3)  //Start Spawn
-        {
-            // Choose a random index from the enemies array
-            int randomEnemyIndex = Random.Range(0, theEnemy.Length);
+        // Respawn the item at the same position as the SpawnerRand object
+        Vector3 respawnPosition = transform.position;
 
-            // Respawn the item at a new position
-            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-25, 25), 0.5f, UnityEngine.Random.Range(-10, -20));
-            Debug.Log("Respawn Position: " + respawnPosition);
+        // Spawn a new item at the calculated position
+        GameObject newEnemy = Instantiate(theEnemy[Random.Range(0, theEnemy.Length)], respawnPosition, Quaternion.identity);
 
-            // Spawn a new item at the calculated position
-            GameObject newEnemy = Instantiate(theEnemy[randomEnemyIndex], respawnPosition, Quaternion.identity);
-
-            // Set the parent of the newEnemy to the specified parentTransform
-            newEnemy.transform.SetParent(parentTransform);
-
-            // Set the newEnemy to active
-            newEnemy.SetActive(true);
-
-            yield return new WaitForSeconds(spawnDelay);
-            enemyCount += 1;
+        // Set the parent of the newEnemy to the specified parentTransform
+        if(targetObject != null && targetObject.activeSelf){
+        newEnemy.transform.SetParent(parentTransform);
+        } else{
+        newEnemy.transform.SetParent(UnparentTransform);
         }
+        // Set the newEnemy to active
+        newEnemy.SetActive(true);
 
-        while (enemyCount < 50) //Continuous Spawn
-        {
-            // Choose a random index from the enemies array
-            int randomEnemyIndex = Random.Range(0, theEnemy.Length);
-
-            // Respawn the item at a new position
-            Vector3 respawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-25, 25), 0.5f, UnityEngine.Random.Range(-10f, -20f));
-            Debug.Log("Respawn Position: " + respawnPosition);
-            // Spawn a new item at the calculated position
-            GameObject newEnemy = Instantiate(theEnemy[randomEnemyIndex], respawnPosition, Quaternion.identity);
-
-            // Set the parent of the newEnemy to the specified parentTransform
-            newEnemy.transform.SetParent(parentTransform);
-
-            // Set the newEnemy to active
-            newEnemy.SetActive(true);
-
-            yield return new WaitForSeconds(spawnDelay);
-            enemyCount += 1;
-        }
+        yield return new WaitForSeconds(spawnDelay);
+        enemyCount += 1;
     }
+
+    while (enemyCount < 50) // Continuous Spawn
+    {
+        // Respawn the item at the same position as the SpawnerRand object
+        Vector3 respawnPosition = transform.position;
+
+        // Spawn a new item at the calculated position
+        GameObject newEnemy = Instantiate(theEnemy[Random.Range(0, theEnemy.Length)], respawnPosition, Quaternion.identity);
+
+        // Set the parent of the newEnemy to the specified parentTransform
+        if(targetObject != null && targetObject.activeSelf){
+        newEnemy.transform.SetParent(parentTransform);
+        } else{
+        newEnemy.transform.SetParent(UnparentTransform);
+        }
+        // Set the newEnemy to active
+        newEnemy.SetActive(true);
+
+        yield return new WaitForSeconds(spawnDelay);
+        enemyCount += 1;
+    }
+
 }
+
+    public void Here(){
+        StartCoroutine(EnemyDrop());
+    }
+    }
