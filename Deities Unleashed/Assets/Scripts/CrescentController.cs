@@ -40,7 +40,8 @@ public class CrescentController : MonoBehaviour
         if (canAttack)
         {
             CrescentAttack();
-            slashSound.Play();
+            Sound();
+            Invoke("Sound", 0.3f);
             StartCoroutine(StartCooldown());
         }
     }
@@ -122,6 +123,11 @@ public class CrescentController : MonoBehaviour
     {
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
+    }
+
+    public void Sound()
+    {
+        slashSound.Play();
     }
 
 }
