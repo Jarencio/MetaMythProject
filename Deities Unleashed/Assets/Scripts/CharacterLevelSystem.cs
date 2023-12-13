@@ -83,6 +83,9 @@ public class CharacterLevelSystem : MonoBehaviour
             expToNextLevel += 100;
         }
 
+if (currentLevel==8){
+     Invoke("spawnBoss", 1.5f);
+}
         // Update player stats based on the level
         UpdatePlayerStats();
     }
@@ -116,6 +119,8 @@ public class CharacterLevelSystem : MonoBehaviour
 
             Debug.Log($"Health Regenerated: {previousHealth} -> {currenthealth}");
         }
+
+
     }
 
     public void TakeDamage(int amount)

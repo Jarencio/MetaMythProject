@@ -6,7 +6,7 @@ public class CustomObserverEventHandler : DefaultObserverEventHandler
 {
     // Reference to the GameObjects you want to enable/disable
     public GameObject[] gameObjectsToEnable;
-    public GameObject gameObjectsToJustEnable;
+    public GameObject[] gameObjectsToJustEnable;
 
     protected override void Start()
     {
@@ -45,9 +45,15 @@ public class CustomObserverEventHandler : DefaultObserverEventHandler
             }
         }
 
-        if (gameObjectsToJustEnable != null && !gameObjectsToJustEnable.activeSelf)
+        if (gameObjectsToJustEnable != null)
         {
-            gameObjectsToJustEnable.SetActive(true);
+            foreach (var gameObject in gameObjectsToJustEnable)
+            {
+                if (gameObject != null && !gameObject.activeSelf)
+                {
+                    gameObject.SetActive(true);
+                }
+            }
         }
     }
 
@@ -63,5 +69,7 @@ public class CustomObserverEventHandler : DefaultObserverEventHandler
                 }
             }
         }
+
+  
     }
 }

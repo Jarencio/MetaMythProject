@@ -191,7 +191,7 @@ public class EnemyTarget : MonoBehaviour
     }
             if(objectTag == "Mayari"){
 
-        expgain = 20000;
+        expgain = 200000;
 
         }
 
