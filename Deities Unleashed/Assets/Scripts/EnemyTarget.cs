@@ -197,7 +197,7 @@ public class EnemyTarget : MonoBehaviour
 
 
 
-        expgain = 2 + (2 * Level);
+        expgain = 5 + (2 * Level);
         MaxHealth = Health;
 
         if (healthbar != null)

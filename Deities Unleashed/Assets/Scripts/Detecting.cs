@@ -6,25 +6,50 @@ public class Detecting : MonoBehaviour
     public GameObject targetObject; // Assign your target GameObject in the Unity Editor
     //public SpawnerRand spawn;
     public int i = 0;
+
     void Update()
     {
         // Check if the target GameObject is active or not
         if (targetObject != null && targetObject.activeSelf)
         {
             // Your logic when the GameObject is active goes here
-            pop.ImageTrack();
-            if(i==0){
-        //    spawn.Here();
-            i++;
-            }
+            int numberOfActiveChildren = GetNumberOfActiveChildren(targetObject);
+            pop.ImageTrack(numberOfActiveChildren);
 
+            if (i == 0)
+            {
+                //    spawn.Here();
+                i++;
+            }
         }
         else
         {
             // Your logic when the GameObject is not active goes here
             pop.NoImageTrack();
             i = 0;
-             }
         }
     }
 
+    // Function to get the number of active children in a GameObject
+    private int GetNumberOfActiveChildren(GameObject parent)
+    {
+        if (parent != null)
+        {
+            int activeChildrenCount = 0;
+
+            foreach (Transform child in parent.transform)
+            {
+                if (child.gameObject.activeSelf)
+                {
+                    activeChildrenCount++;
+                }
+            }
+
+            return activeChildrenCount;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+}

@@ -81,11 +81,11 @@ public void NoImageTrack()
 }
 
 
-public void ImageTrack()
+public void ImageTrack(int s)
 {
     if (textComponent != null)
     {
-        textComponent.text = "Image is scanned! Time to fight";
+        textComponent.text = "Image is scanned! Time to fight (" +s +" Enemies Left)";
         textComponent.color = new Color(0.0f, 1.0f, 0.0f, 1.0f); // Light Green
     }
     else
