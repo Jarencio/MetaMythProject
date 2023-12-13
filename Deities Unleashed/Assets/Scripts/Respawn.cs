@@ -7,6 +7,9 @@ public class Respawn : MonoBehaviour
 {
     public void RestartLevel()
     {
+        PlayerPrefs.SetInt("SavedLevel", FindObjectOfType<CharacterLevelSystem>().currentLevel);
+        PlayerPrefs.SetInt("SavedExp", FindObjectOfType<CharacterLevelSystem>().currentExp);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
     }
