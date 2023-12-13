@@ -408,7 +408,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1440658683}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5163,7 +5163,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1440658683}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -5517,7 +5517,7 @@ RectTransform:
   - {fileID: 1233425070}
   - {fileID: 1544689648}
   m_Father: {fileID: 1440658683}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -5816,14 +5816,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660665867}
   m_LocalRotation: {x: 0.74340594, y: -0, z: -0, w: -0.6688405}
-  m_LocalPosition: {x: -3207, y: -534.87, z: 136.28}
+  m_LocalPosition: {x: -2247, y: 5.130005, z: 136.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1276142544}
   - {fileID: 130852888}
-  m_Father: {fileID: 1440658683}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &675633680
 GameObject:
@@ -7096,7 +7096,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859445761
 GameObject:
@@ -7932,7 +7932,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921966964 stripped
 GameObject:
@@ -12646,7 +12646,7 @@ Transform:
   m_Children:
   - {fileID: 1747354150}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1436663562
 MonoBehaviour:
@@ -12746,7 +12746,6 @@ RectTransform:
   m_Children:
   - {fileID: 1691915832}
   - {fileID: 1746715997}
-  - {fileID: 660665872}
   - {fileID: 112169571}
   - {fileID: 569154726}
   - {fileID: 620561220}
