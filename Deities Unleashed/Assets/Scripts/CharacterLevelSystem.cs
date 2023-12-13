@@ -89,11 +89,6 @@ public class CharacterLevelSystem : MonoBehaviour
              Invoke("spawnBoss", 1.5f);
         }
 
-        // Save the current level and exp after leveling up
-        PlayerPrefs.SetInt("SavedLevel", currentLevel);
-        PlayerPrefs.SetInt("SavedExp", currentExp);
-
-        // Update player stats based on the level
         UpdatePlayerStats();
     }
 
@@ -148,8 +143,6 @@ public class CharacterLevelSystem : MonoBehaviour
     void Start()
     {
         // Load saved level and exp, defaulting to 1 and 0 if not found
-        currentLevel = PlayerPrefs.GetInt("SavedLevel", 1);
-        currentExp = PlayerPrefs.GetInt("SavedExp", 0);
 
         LvlBar.UpdateHealthBar(currentExp, expToNextLevel);
         artificialBtn.onClick.AddListener(OnAttackButtonCLick); // temporary
