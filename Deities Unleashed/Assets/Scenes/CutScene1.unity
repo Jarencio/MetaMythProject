@@ -729,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 983.7136, y: -3144}
+  m_AnchoredPosition: {x: 983.7136, y: -3062}
   m_SizeDelta: {x: 1458.2349, y: 1591.4329}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729956106
@@ -766,25 +766,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\tIn a world were gods watches over us. There\u2019s a young man name
-    y/n who have been gifted an inhumane strength. He uses this strength for only
+    Lakan who have been gifted an inhumane strength. He uses this strength for only
     his benefit like scaring weak humans to smooch money while he doesn't known his
     divine lineage & being a demigod. One day while he's waiting in the gate, a strange
     voice on his head spoke \"My son you have disappointed me, You took a dark path
-    & bring harm to the weak and innocent\". Before he speak light dimmer to darkness.\r\n\r\n\tOnce
+    & bring harm to the weak and innocent\". Before he speak light dimmer to darkness.\r\n\r\nOnce
     a light show up again he sees the same place but strangely no people & silence
-    is what he face. A Strange blurry figure show up. y/n spoke up and says \"what
-    is happening?, Someone help me\". The Figure spoke up \"Silence my child, you've
-    failed me and you need to pay the price by you're life\". \"What? Please don\u2019t
-    I am not ready to die, give me a chance\" y/n begged. A silence occur until the
-    figure spoke once again \"I would give you another chance since you are my son,
-    I would give you a hurdle. You'll be fighting one of you're sisters, one diety
-    & me. I'll give you time to strengthen up by making you face little monsters
-    we made & once we think you are strong enough to fight, you'll see an item to
-    summon us & try to defeat us.\". \r\n\"Thank you so much, I would do it\" y/n
-    happily says. \"BUT if you failed to make me see you're worth once again you'll
-    die in this place without anyone remembering you're existence. Good luck my child
-    & don\u2019t make me disappointed once again\" The Figure says and he vanished.\r\n\r\n\"So
-    it's all or nothing huh?\"\r\n"
+    is what he face. A Strange blurry figure show up. Lakan stands up and run through
+    the blurry figure and gave it a punch but his punch just goes through like the
+    figure is just a smoke. Lakan started speaking \u201CDon\u2019t be a coward and
+    show who you really are\u201D. The Figure spoke up \"Silence my child, you've
+    failed me and you need to pay the price by you're life\". Lakan  just laughs
+    through his face and said \u201CYou can\u2019t kill me, No one can kill me. Whatever
+    entity you are, this all mig-\u201D\r\n\r\nThe Figure cutoff his speech by sending
+    lighting besides him & spoke for the last time \u201CWelcome to you\u2019re own
+    hell\u2019 and it disappear leaving Lakan alone\u2026\r\n"
 --- !u!222 &1729956107
 CanvasRenderer:
   m_ObjectHideFlags: 0
