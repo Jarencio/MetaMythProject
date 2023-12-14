@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34513268, g: 0.34343022, b: 0.30799308, a: 1}
+  m_IndirectSpecularColor: {r: 0.3451324, g: 0.34342998, b: 0.3079929, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,7 +193,8 @@ MonoBehaviour:
   gameObjectsToJustEnable:
   - {fileID: 372268410}
   - {fileID: 894201380}
-  - {fileID: 0}
+  - {fileID: 1183710575}
+  Disabl: {fileID: 175119580}
 --- !u!114 &13724586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,13 +254,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: 385533901_665891365746891_6460843793598457916_n
+  mTrackableName: PhoenixScan
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Meta-Mythology.xml
-  mAspectRatio: 1
+  mAspectRatio: 0.998326
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1
+  mHeight: 0.998326
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 13724587}
   mHiddenRoot: {fileID: 0}
-  mTargetName: 385533901_665891365746891_6460843793598457916_n
+  mTargetName: PhoenixScan
   mDatasetName: Vuforia/Meta-Mythology.xml
   mCastedBehaviour: {fileID: 13724587}
   mMeshFilter: {fileID: 0}
@@ -2139,7 +2140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &175119581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5991,13 +5992,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: 401165750_1497417794137173_8750742717527674409_n
+  mTrackableName: moon
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Meta-Mythology.xml
-  mAspectRatio: 1
+  mAspectRatio: 0.971354
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1
+  mHeight: 0.971354
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -6081,7 +6082,8 @@ MonoBehaviour:
   gameObjectsToJustEnable:
   - {fileID: 690952538}
   - {fileID: 1781728769}
-  - {fileID: 0}
+  - {fileID: 175119580}
+  Disabl: {fileID: 1183710575}
 --- !u!114 &411145011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6096,7 +6098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 411145007}
   mHiddenRoot: {fileID: 0}
-  mTargetName: 401165750_1497417794137173_8750742717527674409_n
+  mTargetName: moon
   mDatasetName: Vuforia/Meta-Mythology.xml
   mCastedBehaviour: {fileID: 411145007}
   mMeshFilter: {fileID: 0}
@@ -8762,6 +8764,7 @@ MonoBehaviour:
   - {fileID: 130852887}
   - {fileID: 1276142543}
   gameObjectsToJustEnable: []
+  Disabl: {fileID: 0}
 --- !u!114 &660665870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15443,7 +15446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1183710576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15451,7 +15454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183710575}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22d07b93e6a1aa849a4b868983620012, type: 3}
   m_Name: 
@@ -18442,6 +18445,7 @@ MonoBehaviour:
   - {fileID: 473367667}
   - {fileID: 1671587790}
   gameObjectsToJustEnable: []
+  Disabl: {fileID: 0}
 --- !u!114 &1436663563
 MonoBehaviour:
   m_ObjectHideFlags: 0
