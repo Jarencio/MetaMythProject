@@ -174,8 +174,13 @@ public class EnemyTarget : MonoBehaviour
             MaxDmg = 90f;
             Defense = 0f;
     }
-    else if(objectTag == "Mapulon"){
-
+    else if (objectTag == "Mapulon")
+    {
+        Level = 16;
+        Health = 2200f;
+        MinDmg = 90f;
+        MaxDmg = 140f;
+        Defense = 0f;
     }
     else if(objectTag == "Bathala"){
 
@@ -194,9 +199,15 @@ public class EnemyTarget : MonoBehaviour
         expgain = 5 + (2 * Level);
         MaxHealth = Health;
 
-            if(objectTag == "Mayari"){
+        if(objectTag == "Mayari"){
 
         expgain = 1000000;
+
+        }
+        if (objectTag == "Mapulon")
+        {
+
+            expgain = 1000000;
 
         }
         if (healthbar != null)
@@ -224,9 +235,16 @@ public class EnemyTarget : MonoBehaviour
                 a -= 1000;
             }
         }
-        else if(objectTag == "Spawner")
+        else if (objectTag == "Mapulon")
         {
-            if(a > 1000)
+            if (a > 1000)
+            {
+                a -= 1000;
+            }
+        }
+        else if (objectTag == "Spawner")
+        {
+            if (a > 1000)
             {
                 a -= 1000;
             }
@@ -373,6 +391,10 @@ public class EnemyTarget : MonoBehaviour
 
         
         if (objectTag == "Mayari")
+        {
+            clearText.SetActive(true);
+        }
+        else if(objectTag == "Mapulon")
         {
             clearText.SetActive(true);
         }
