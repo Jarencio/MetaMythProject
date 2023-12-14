@@ -16,7 +16,7 @@ public class SwordController : MonoBehaviour
     // Reference to the player's level system
     public CharacterLevelSystem CS;
 
-    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle" };
+    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle", "Mayari", "Spawner", "NPC" };
 
     void Start()
     {

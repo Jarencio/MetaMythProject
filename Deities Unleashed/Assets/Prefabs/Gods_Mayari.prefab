@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f796d1cdf39030b4fa7198ea022c5c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clearText: {fileID: 0}
   spawnOffsetDistance: 1
   Item: []
   expCollide: {fileID: 5884187683766619330}
@@ -173,7 +174,7 @@ MonoBehaviour:
     type: 3}
   boxCollider1: {fileID: 4575612312614264845}
   enemyspawn: 0
-  boxCollider: {fileID: 0}
+  cicleCollider: {fileID: 0}
   Level: 0
   Health: 20
   MaxHealth: 0
@@ -323,6 +324,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 1538102051281877180, guid: 2501ab572fb85064c9822f7a8086f149,
     type: 3}
   ProjectilePos: {fileID: 4575612313078222254}
+  parent: {fileID: 0}
   enemyTarget: {fileID: 4575612312614264844}
   shootingDistanceThreshold: 50
   type: 0
@@ -342,6 +344,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 7652643149443253455, guid: d7a5c98bce1272b47a442cab33a91447,
     type: 3}
   ProjectilePos: {fileID: 4575612313078222254}
+  parent: {fileID: 0}
   enemyTarget: {fileID: 4575612312614264844}
   shootingDistanceThreshold: 10
   type: 2

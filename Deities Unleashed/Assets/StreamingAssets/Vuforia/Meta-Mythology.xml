@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="almanac1" size="1.000000 0.982910" />
+    <ImageTarget name="blacksmith" size="1.000000 0.994141" />
+    <ImageTarget name="guard1" size="1.000000 0.991211" />
+    <ImageTarget name="guard2" size="1.000000 0.990723" />
+    <ImageTarget name="navigator" size="1.000000 0.976074" />
+    <ImageTarget name="wizard" size="1.000000 0.977539" />
+    <ImageTarget name="377152500_761510135790545_1804572421681597890_n" size="1.000000 1.000000" />
     <ImageTarget name="401165750_1497417794137173_8750742717527674409_n" size="1.000000 1.000000" />
     <ImageTarget name="385533901_665891365746891_6460843793598457916_n" size="1.000000 1.000000" />
     <ImageTarget name="384553587_664115812535648_7189725096134254460_n" size="1.000000 1.000000" />

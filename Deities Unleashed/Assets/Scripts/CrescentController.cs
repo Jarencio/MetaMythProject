@@ -14,7 +14,7 @@ public class CrescentController : MonoBehaviour
     public Button CrescentAttackButton;
     public CharacterLevelSystem CS;
 
-    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle", "Spawner" };
+    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle", "Mayari", "Spawner", "NPC" };
 
 
     // Start is called before the first frame update

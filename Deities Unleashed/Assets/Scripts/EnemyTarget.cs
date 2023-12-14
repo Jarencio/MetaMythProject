@@ -195,6 +195,12 @@ public class EnemyTarget : MonoBehaviour
 
 
     }
+    else if (objectTag == "NPC")
+    {
+        Level = 99;
+        Health = 1f;
+        Defense = 0f;
+    }
 
         expgain = 5 + (2 * Level);
         MaxHealth = Health;
@@ -249,6 +255,7 @@ public class EnemyTarget : MonoBehaviour
                 a -= 1000;
             }
         }
+        
     
         if (a < 0)
         {

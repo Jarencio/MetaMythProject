@@ -10,7 +10,7 @@ public class Arrow : MonoBehaviour
     [SerializeField] int maxDamage; // Maximum damage
 
     // Define the tags that the arrow should compare against
-    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle", "Mayari", "Spawner" };
+    private string[] targetTags = { "Phoenix", "Tiyanak", "BalBal", "TikTik", "Golem", "Wolf", "Cyclops", "ElectricGolem", "Eagle", "Mayari", "Spawner", "NPC" };
 
     private bool damageApplied = false; // Flag to track if damage has already been applied
 

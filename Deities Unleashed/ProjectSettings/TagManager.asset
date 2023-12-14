@@ -19,6 +19,7 @@ TagManager:
   - Golemn
   - Wolf
   - Golem
+  - NPC
   layers:
   - Default
   - TransparentFX
