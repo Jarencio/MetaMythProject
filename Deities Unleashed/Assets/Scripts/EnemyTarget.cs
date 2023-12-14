@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class EnemyTarget : MonoBehaviour
 {
+    public GameObject clearText;
     public float spawnOffsetDistance = 1.0f;
     public ItemCollection[] Item;
     public ExpParticleCollision expCollide;
@@ -189,17 +190,15 @@ public class EnemyTarget : MonoBehaviour
 
 
     }
-            if(objectTag == "Mayari"){
-
-        expgain = 200000;
-
-        }
-
-
 
         expgain = 5 + (2 * Level);
         MaxHealth = Health;
 
+            if(objectTag == "Mayari"){
+
+        expgain = 1000000;
+
+        }
         if (healthbar != null)
         {
             pop.Lvl(Level);
@@ -345,7 +344,8 @@ public class EnemyTarget : MonoBehaviour
 
     void Die()
     {
-        
+        string objectTag = gameObject.tag;
+
         // Deactivate the BoxCollider
         if (boxCollider1 != null) boxCollider1.enabled = false;
 
@@ -353,9 +353,11 @@ public class EnemyTarget : MonoBehaviour
         // Destroy the game object when health reaches zero
         Destroy(healthprefabs);
         CS.GainExperience(expgain);
+        if(objectTag == "Mayari"){
+        clearText.SetActive(true);
+        }
 
-
-
+          
         Destroy(gameObject);
 
         // Deactivate the BoxCollider
@@ -371,6 +373,9 @@ public class EnemyTarget : MonoBehaviour
             Debug.Log("Dead");
 
             expCollide.SpawnExpParticles();
+
+        
+
 
     }
 }
