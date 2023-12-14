@@ -9,7 +9,7 @@ public class CharacterLevelSystem : MonoBehaviour
     public Button artificialBtn; //temporary
     public GameObject tempBoss;
 
-
+   public int expboost = 0;
     public float regenerationAmount = 5;
     public float regenerationTimer = 10f;
     public float regenerationCooldown = 10f;
@@ -35,6 +35,7 @@ public class CharacterLevelSystem : MonoBehaviour
     {
         if (currentLevel < 25)
         {
+            expAmount+= expboost;
             currentExp += expAmount;
             Debug.Log("Gained " + expAmount + " experience points. Total experience: " + currentExp);
             LvlBar.UpdateHealthBar(currentExp, expToNextLevel);

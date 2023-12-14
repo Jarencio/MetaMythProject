@@ -8,6 +8,7 @@ public class CustomObserverEventHandler : DefaultObserverEventHandler
     public GameObject[] gameObjectsToEnable;
     public GameObject[] gameObjectsToJustEnable;
     public GameObject Disabl;
+    public GameObject Disabl2;
     protected override void Start()
     {
         base.Start();
@@ -57,6 +58,7 @@ public class CustomObserverEventHandler : DefaultObserverEventHandler
         }
 
         Disabl.SetActive(false);
+        Disabl2.SetActive(false);
     }
 
     private void DisableGameObjects()

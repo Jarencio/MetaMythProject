@@ -45,9 +45,9 @@ CS.health += 20;
          } else if (function=="DefenseBoost"){
  CS.defense += 2;        
   } else if (function=="Item3"){
- Debug.Log("3");
+ CS.regenerationAmount += 5;
          } else if (function=="Item4"){
- Debug.Log("4");
+ CS.expboost += 2;
          } else if (function=="Item5"){
  Debug.Log("5");
          }
