@@ -12,6 +12,13 @@ TagManager:
   - Spawner
   - Cyclops
   - Tiyanak
+  - Mapulon
+  - Bathala
+  - GolemSea
+  - GolemSeason
+  - Golemn
+  - Wolf
+  - Golem
   layers:
   - Default
   - TransparentFX

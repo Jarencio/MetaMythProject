@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1092552332
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24,7 +24,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092552331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7.09}
+  m_LocalPosition: {x: 0, y: 0, z: 2.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53,9 +53,12 @@ GameObject:
   - component: {fileID: 5007857433091198709}
   - component: {fileID: 5007857433091198708}
   - component: {fileID: 637286678}
+  - component: {fileID: 637286680}
+  - component: {fileID: 637286679}
+  - component: {fileID: 637286690}
   m_Layer: 0
   m_Name: EnemyPhoenix
-  m_TagString: Phoenix
+  m_TagString: Tiyanak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +72,7 @@ RectTransform:
   m_GameObject: {fileID: 5007857433091198717}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 178.9}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.3, y: 0.29999974, z: 0.2999997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3078339596792137078}
@@ -189,9 +192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f796d1cdf39030b4fa7198ea022c5c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clearText: {fileID: 0}
   spawnOffsetDistance: 1
   Item: []
-  expCollide: {fileID: 3145897857865463441}
+  expCollide: {fileID: 0}
   healthprefabs: {fileID: 1166882247780716876}
   bloodParticles: {fileID: 0}
   pop: {fileID: 1166882248492676431}
@@ -226,7 +230,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   MoveSpeed: 3
   MaxDist: 8
-  MinDist: 15
+  MinDist: 50
   ChaseRange: 50
 --- !u!82 &5007857433091198708
 AudioSource:
@@ -336,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45232d63cc9c143468ee91e0890f7a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 5007857433091198717}
   ProjectilePrefab: {fileID: 1538102051281877180, guid: 63260156ef415984995aca87f92f24e7,
     type: 3}
   ProjectilePos: {fileID: 1092552332}
@@ -344,6 +348,48 @@ MonoBehaviour:
   shootingDistanceThreshold: 45
   type: 0
   clone: {fileID: 0}
+--- !u!54 &637286680
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007857433091198717}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &637286679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007857433091198717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f878c0c7950f3945b9c58b2f1c3b71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullable: 1
+--- !u!114 &637286690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007857433091198717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2297f041f39d7b547a92acc613a706ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 637286680}
 --- !u!1001 &5007857432090042444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -439,18 +485,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5007857432090042444}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3145897857865463441 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7986855359513712349, guid: 516b373689108834b914f05ead3b2792,
-    type: 3}
-  m_PrefabInstance: {fileID: 5007857432090042444}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b1818c56363484ebfb608b818024cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5007857432802668273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -466,12 +500,12 @@ PrefabInstance:
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147100086417326000, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}

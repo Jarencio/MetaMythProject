@@ -106,7 +106,7 @@ public class EnemyTarget : MonoBehaviour
             Defense = 2f + (2f * Level);
         }
 
-        else if (objectTag == "Golemn")
+        else if (objectTag == "Golem")
         {
             if (Level < 9)
             {
@@ -353,11 +353,7 @@ public class EnemyTarget : MonoBehaviour
         // Destroy the game object when health reaches zero
         Destroy(healthprefabs);
         CS.GainExperience(expgain);
-        if(objectTag == "Mayari"){
-        clearText.SetActive(true);
-        }
-
-          
+        
         Destroy(gameObject);
 
         // Deactivate the BoxCollider
@@ -365,16 +361,21 @@ public class EnemyTarget : MonoBehaviour
         if (cicleCollider != null) cicleCollider.enabled = false;
 
             int randoms = Random.Range(0,6);
-        if (randoms==2){
-        int item = Random.Range(0, Item.Length);
-                Item[item].Here(enemyspawn);   
+        if (randoms==2)
+        {
+            int item = Random.Range(0, Item.Length);
+            Item[item].Here(enemyspawn);   
             Item[item].RespawnItem();
         }
-            Debug.Log("Dead");
+        Debug.Log("Dead");
 
-            expCollide.SpawnExpParticles();
+        expCollide.SpawnExpParticles();
 
         
+        if (objectTag == "Mayari")
+        {
+            clearText.SetActive(true);
+        }
 
 
     }
