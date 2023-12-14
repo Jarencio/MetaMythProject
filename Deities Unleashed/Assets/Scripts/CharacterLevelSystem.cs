@@ -8,6 +8,7 @@ public class CharacterLevelSystem : MonoBehaviour
 {
     public Button artificialBtn; //temporary
     public GameObject tempBoss;
+    public GameObject tempBoss2;
 
 
     public float regenerationAmount = 5;
@@ -27,7 +28,7 @@ public class CharacterLevelSystem : MonoBehaviour
     public FloatingHealth LvlBar;
     public FloatingHealth HealthBar;
     public Popup pops;
-
+    public int expboost = 0;
 
 
     // Function to gain experience points
@@ -35,6 +36,7 @@ public class CharacterLevelSystem : MonoBehaviour
     {
         if (currentLevel < 25)
         {
+            expAmount += expboost;
             currentExp += expAmount;
             Debug.Log("Gained " + expAmount + " experience points. Total experience: " + currentExp);
             LvlBar.UpdateHealthBar(currentExp, expToNextLevel);
@@ -48,7 +50,6 @@ public class CharacterLevelSystem : MonoBehaviour
         {
             Debug.Log("You've reached the maximum level (25) and can no longer gain experience.");
         }
-
 
     }
 
@@ -88,6 +89,10 @@ public class CharacterLevelSystem : MonoBehaviour
         if (currentLevel==8){
              Invoke("spawnBoss", 1.5f);
         }
+        if (currentLevel==16){
+             Invoke("ndspawnBoss", 1.5f);
+        }
+        
 
         UpdatePlayerStats();
     }
@@ -165,5 +170,10 @@ public class CharacterLevelSystem : MonoBehaviour
     public void spawnBoss()
     {
         tempBoss.SetActive(true);
+    }
+
+        public void ndspawnBoss()
+    {
+        tempBoss2.SetActive(true);
     }
 }

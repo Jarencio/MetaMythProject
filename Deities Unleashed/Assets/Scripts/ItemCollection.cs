@@ -44,11 +44,11 @@ CS.currenthealth += 20;
 CS.health += 20;
          } else if (function=="DefenseBoost"){
  CS.defense += 2;        
-  } else if (function=="Item3"){
- Debug.Log("3");
-         } else if (function=="Item4"){
- Debug.Log("4");
-         } else if (function=="Item5"){
+  } else if (function=="Regen"){
+ CS.regenerationAmount += 5;
+         } else if (function=="Exp"){
+ CS.expboost += 2;
+          } else if (function=="Item5"){
  Debug.Log("5");
          }
         int x = inventory.s;
