@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="401165750_1497417794137173_8750742717527674409_n" size="1.000000 1.000000" />
+    <ImageTarget name="385533901_665891365746891_6460843793598457916_n" size="1.000000 1.000000" />
+    <ImageTarget name="384553587_664115812535648_7189725096134254460_n" size="1.000000 1.000000" />
+    <ImageTarget name="Bathalaaa" size="1.000000 0.994792" />
+    <ImageTarget name="Bathalaa" size="1.000000 0.994792" />
+    <ImageTarget name="Mapulonn" size="1.000000 0.993164" />
+    <ImageTarget name="Stage2" size="1.000000 0.989583" />
     <ImageTarget name="respawn112" size="1.000000 0.986979" />
     <ImageTarget name="respawn111" size="1.000000 0.986979" />
     <ImageTarget name="moon" size="1.000000 0.971354" />

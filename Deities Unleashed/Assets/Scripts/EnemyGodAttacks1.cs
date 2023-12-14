@@ -40,8 +40,7 @@ public class EnemyGodAttacks1 : MonoBehaviour
                 if (timer > 5)
                 {
                     timer = 0;
-
-                    Shoot1();
+                    Shoot();
                 }
             }
             else
@@ -57,7 +56,7 @@ public class EnemyGodAttacks1 : MonoBehaviour
     }
 
 
-    void Shoot1()
+    void Shoot()
     {
         GameObject projectileInstance = Instantiate(ProjectilePrefab, ProjectilePos.position, Quaternion.identity);
         projectileInstance.transform.SetParent(parent);
@@ -78,11 +77,14 @@ public class EnemyGodAttacks1 : MonoBehaviour
             enemyBulletScript.damage = damage;
             enemyBulletScript.type = type;
 
-
-            if (enemyBulletScript.type == 2)
+            if (enemyBulletScript.type == 0)
             {
-                Animator anim2 = enemy.GetComponent<Animator>();
-                anim2.SetTrigger("attack1");
+                Animator anim1 = enemy.GetComponent<Animator>();
+                anim1.SetTrigger("attack");
+            }
+            else if (enemyBulletScript.type == 2)
+            {
+                Invoke("Attack1", 2.0f);
             }
 
 
@@ -91,5 +93,11 @@ public class EnemyGodAttacks1 : MonoBehaviour
         {
             Debug.LogError("EnemyBullet script not found on instantiated projectile.");
         }
+    }
+
+    public void Attack1()
+    {
+        Animator anim2 = enemy.GetComponent<Animator>();
+        anim2.SetTrigger("attack1");
     }
 }
