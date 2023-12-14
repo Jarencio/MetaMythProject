@@ -7,6 +7,7 @@ public class Detecting : MonoBehaviour
     //public SpawnerRand spawn;
     public int i = 0;
 
+
     void Update()
     {
         // Check if the target GameObject is active or not
@@ -20,6 +21,7 @@ public class Detecting : MonoBehaviour
             {
                 //    spawn.Here();
                 i++;
+                            Debug.Log("NotMeh");
             }
         }
         else
@@ -27,6 +29,7 @@ public class Detecting : MonoBehaviour
             // Your logic when the GameObject is not active goes here
             pop.NoImageTrack();
             i = 0;
+            Debug.Log("Meh");
         }
     }
 
