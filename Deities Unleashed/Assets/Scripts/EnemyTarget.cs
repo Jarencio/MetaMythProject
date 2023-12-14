@@ -183,8 +183,12 @@ public class EnemyTarget : MonoBehaviour
         Defense = 0f;
     }
     else if(objectTag == "Bathala"){
-
-    }
+            Level = 25;
+            Health = 5000f;
+            MinDmg = 190f;
+            MaxDmg = 140f;
+            Defense = 0f;
+        }
 
     else if (objectTag == "Spawner") 
     {
@@ -208,6 +212,12 @@ public class EnemyTarget : MonoBehaviour
         if(objectTag == "Mayari"){
 
         expgain = 1000000;
+
+        }
+        if (objectTag == "Mapulon")
+        {
+
+            expgain = 1000000;
 
         }
         if (objectTag == "Mapulon")
@@ -242,6 +252,13 @@ public class EnemyTarget : MonoBehaviour
             }
         }
         else if (objectTag == "Mapulon")
+        {
+            if (a > 1000)
+            {
+                a -= 1000;
+            }
+        }
+        else if (objectTag == "Bathala")
         {
             if (a > 1000)
             {
@@ -402,6 +419,10 @@ public class EnemyTarget : MonoBehaviour
             clearText.SetActive(true);
         }
         else if(objectTag == "Mapulon")
+        {
+            clearText.SetActive(true);
+        }
+        else if (objectTag == "Bathala")
         {
             clearText.SetActive(true);
         }

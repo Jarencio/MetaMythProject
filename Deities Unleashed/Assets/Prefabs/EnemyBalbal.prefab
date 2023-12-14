@@ -24,7 +24,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2607514143237648150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.54}
+  m_LocalPosition: {x: 0, y: 0, z: 1.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 2607514143776289375}
   - component: {fileID: 2607514143776289374}
   - component: {fileID: 2607514143776289345}
+  - component: {fileID: 1596521609}
   m_Layer: 0
   m_Name: EnemyBalbal
   m_TagString: BalBal
@@ -71,7 +72,7 @@ RectTransform:
   m_GameObject: {fileID: 2607514143776289363}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 171.8}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8169849380375860795}
@@ -175,7 +176,7 @@ MonoBehaviour:
   Item:
   - {fileID: 0}
   - {fileID: 0}
-  expCollide: {fileID: 5402282080784280522}
+  expCollide: {fileID: 0}
   healthprefabs: {fileID: 8169849380375860788}
   bloodParticles: {fileID: 2450537656391660581, guid: 260e89a585c16a94cab13ffc6fdb44bf,
     type: 3}
@@ -379,6 +380,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pullable: 1
+--- !u!114 &1596521609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607514143776289363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2297f041f39d7b547a92acc613a706ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2607514143776289374}
 --- !u!1001 &2607514142753930519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,18 +467,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 516b373689108834b914f05ead3b2792, type: 3}
---- !u!114 &5402282080784280522 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7986855359513712349, guid: 516b373689108834b914f05ead3b2792,
-    type: 3}
-  m_PrefabInstance: {fileID: 2607514142753930519}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b1818c56363484ebfb608b818024cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5469848301479254061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8054422128920257850, guid: 516b373689108834b914f05ead3b2792,
@@ -491,12 +493,12 @@ PrefabInstance:
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147100085943216592, guid: 251212c6314456e43bd51fb41bf00167,
         type: 3}
