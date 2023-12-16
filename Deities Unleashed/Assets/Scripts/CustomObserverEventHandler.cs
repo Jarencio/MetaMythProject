@@ -9,6 +9,8 @@ public class CustomObserverEventHandler : DefaultObserverEventHandler
     public GameObject[] gameObjectsToJustEnable;
     public GameObject Disabl;
     public GameObject Disabl2;
+     public GameObject Disabl3;
+   
     protected override void Start()
     {
         base.Start();

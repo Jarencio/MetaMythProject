@@ -48,7 +48,7 @@ public class SpawnerRand : MonoBehaviour
             enemyCount += 1;
         }
 
-        while (enemyCount < 10000) // Continuous Spawn
+        while (enemyCount < 100) // Continuous Spawn
         {
             // Generate random offsets within the spawn range
             float randomX = Random.Range(-spawnRange, spawnRange);
@@ -76,6 +76,11 @@ public class SpawnerRand : MonoBehaviour
             yield return new WaitForSeconds(spawnDelay);
             enemyCount += 1;
         }
+
+        if(enemyCount>=100){
+        enemyCount = 0;
+        }
+
     }
 
     public void Here()

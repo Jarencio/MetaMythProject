@@ -220,7 +220,7 @@ public class EnemyTarget : MonoBehaviour
             expgain = 1000000;
 
         }
-        if (objectTag == "Mapulon")
+        if (objectTag == "Bathala")
         {
 
             expgain = 1000000;
